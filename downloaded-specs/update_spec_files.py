@@ -3,10 +3,10 @@ author: liosha
 For Python 3 only
 """
 
-import urllib.request
+import urllib2
 
 spec_host = 'http://stage-api-groupdocs.dynabic.com/v2.0/spec/spec-files/'
-local_dir = 'E:\\workspace\\workspace_python\\downloaded-specs\\'
+local_dir = 'E:\\rabota\\GroupDocs\\GitHub\\specs\\downloaded-specs\\'
 file_names = [
 	'annotation.json',
 	'async.json',
@@ -27,7 +27,7 @@ file_names = [
 
 for name in file_names:
 	print('Start download file `' + name + '`')
-	response = urllib.request.urlopen(spec_host + name)
+	response = urllib2.urlopen(spec_host + name)
 	data = response.read()
 	print('Write data...')
 	out = open(local_dir + name, 'wb')
