@@ -1,0 +1,676 @@
+{
+  "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0",
+  "swaggerVersion": "1.1",
+  "apiVersion": "2.12",
+  "resourcePath": "/admin",
+  "apis": [
+    {
+      "path": "/admin/{callerId}/users?page={page}&pageSize={pageSize}&nickName={nickName}&firstName={firstName}&lastName={lastName}&signupDate={signupDate}&sortField={sortField}",
+      "operations": [
+        {
+          "nickname": "GetUsers",
+          "summary": "Get users",
+          "responseClass": "GetUsersResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "UserId invoked the service",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/admin/{callerId}/users/{id}/userInfo",
+      "operations": [
+        {
+          "nickname": "GetUserInfo",
+          "summary": "Get users",
+          "responseClass": "Groupdocs.Api.Contract.GetUserInfoResponse,Groupdocs.Api.Core.Contract",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "UserId invoked the service",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/admin/{callerId}/users/{userId}/subscriptions/{family}/subscription",
+      "operations": [
+        {
+          "nickname": "GetUserInfoSubscription",
+          "summary": "Get users info with subscriptions",
+          "responseClass": "GetUserInfoSubscriptionResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "UserId invoked the service",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userId",
+              "description": "User Guid",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "family",
+              "description": "Family subscriptions",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/admin/{callerId}/users/{userId}/subscriptions/{productId}",
+      "operations": [
+        {
+          "nickname": "UpdateUserSubscriptionPlan",
+          "summary": "Update subscription plan user plan from Admin",
+          "responseClass": "SetUserSubscriptionPlanResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "productId",
+              "description": "Product ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "subscriptionPlan",
+              "description": "Subscripition Plan Update parameters",
+              "dataType": "UpdateSubscriptionPlanInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/admin/{callerId}/users/{userId}/status/{status}",
+      "operations": [
+        {
+          "nickname": "UpdateUserStatus",
+          "summary": "Update user status from Admin",
+          "responseClass": "SetUserStatusResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "status",
+              "description": "New User Status BYTE",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/admin/{callerId}/users/{userId}/resetSubscription",
+      "operations": [
+        {
+          "nickname": "ResetSubscription",
+          "summary": "Reset Subscription from Admin",
+          "responseClass": "ResetSubscriptionResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/admin/{callerId}/users/{userId}/getUsersForManage",
+      "operations": [
+        {
+          "nickname": "GetUsersForManage",
+          "summary": "Get users for manage from Admin",
+          "responseClass": "GetAccountUsersResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/admin/{callerId}/users/{userId}/updateUser",
+      "operations": [
+        {
+          "nickname": "UpdateUser",
+          "summary": "Update user from Admin",
+          "responseClass": "UpdateUserResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userInfo",
+              "description": "UserInfo for update",
+              "dataType": "UserInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "GetUsersResponse": {
+      "id": "GetUsersResponse",
+      "properties": {
+        "result": {
+          "type": "GetUsersResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "GetUsersResult": {
+      "id": "GetUsersResult",
+      "properties": {
+        "users": {
+          "type": "List",
+          "items": {
+            "$ref": "UserInfo"
+          }
+        },
+        "count": {
+          "type": "int"
+        }
+      }
+    },
+    "UserInfo": {
+      "id": "UserInfo",
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "pkey": {
+          "type": "string"
+        },
+        "pswd_salt": {
+          "type": "string"
+        },
+        "claimed_id": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "storage": {
+          "type": "int"
+        },
+        "photo": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "trial": {
+          "type": "boolean"
+        },
+        "news_eanbled": {
+          "type": "boolean"
+        },
+        "alerts_eanbled": {
+          "type": "boolean"
+        },
+        "support_eanbled": {
+          "type": "boolean"
+        },
+        "support_email": {
+          "type": "string"
+        },
+        "annotation_branded": {
+          "type": "boolean"
+        },
+        "viewer_branded": {
+          "type": "boolean"
+        },
+        "is_real_time_broadcast_enabled": {
+          "type": "boolean"
+        },
+        "is_scroll_broadcast_enabled": {
+          "type": "boolean"
+        },
+        "is_zoom_broadcast_enabled": {
+          "type": "boolean"
+        },
+        "annotation_logo": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "pointer_tool_cursor": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "annotation_header_options": {
+          "type": "int"
+        },
+        "is_annotation_navigation_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_annotation_zoom_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_annotation_download_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_annotation_print_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_annotation_help_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_right_panel_enabled": {
+          "type": "boolean"
+        },
+        "is_thumbnails_panel_enabled": {
+          "type": "boolean"
+        },
+        "is_standard_header_always_shown": {
+          "type": "boolean"
+        },
+        "is_toolbar_enabled": {
+          "type": "boolean"
+        },
+        "is_text_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_rectangle_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_point_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_strikeout_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_polyline_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_typewriter_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_watermark_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_annotation_document_name_shown": {
+          "type": "boolean"
+        },
+        "annotation_navigation_icons": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "annotation_tool_icons": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "annotation_background_color": {
+          "type": "int"
+        },
+        "viewer_logo": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "viewer_options": {
+          "type": "int"
+        },
+        "is_viewer_navigation_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_viewer_zoom_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_viewer_download_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_viewer_print_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_viewer_help_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_viewer_document_name_shown": {
+          "type": "boolean"
+        },
+        "isviewer_right_mouse_button_menu_enabled": {
+          "type": "boolean"
+        },
+        "signedupOn": {
+          "type": "long"
+        },
+        "signedinOn": {
+          "type": "long"
+        },
+        "signin_count": {
+          "type": "int"
+        },
+        "roles": {
+          "type": "List",
+          "items": {
+            "$ref": "RoleInfo"
+          }
+        },
+        "signature_watermark_enabled": {
+          "type": "boolean"
+        },
+        "signature_desktop_notifications": {
+          "type": "boolean"
+        },
+        "webhook_notification_retries": {
+          "type": "int"
+        },
+        "webhook_notification_failed_recipients": {
+          "type": "string"
+        },
+        "signature_color": {
+          "type": "string"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "primary_email": {
+          "type": "string"
+        }
+      }
+    },
+    "RoleInfo": {
+      "id": "RoleInfo",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "GetUserInfoSubscriptionResponse": {
+      "id": "GetUserInfoSubscriptionResponse",
+      "properties": {
+        "result": {
+          "type": "GetUserInfoSubscriptionResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "GetUserInfoSubscriptionResult": {
+      "id": "GetUserInfoSubscriptionResult",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "plans": {
+          "type": "List",
+          "items": {
+            "$ref": "ProductMetrics"
+          }
+        }
+      }
+    },
+    "ProductMetrics": {
+      "id": "ProductMetrics",
+      "properties": {}
+    },
+    "DecimalMetricValue": {
+      "id": "DecimalMetricValue",
+      "properties": {}
+    },
+    "SetUserSubscriptionPlanResponse": {
+      "id": "SetUserSubscriptionPlanResponse",
+      "properties": {
+        "result": {
+          "type": "SetUserSubscriptionPlanResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SetUserSubscriptionPlanResult": {
+      "id": "SetUserSubscriptionPlanResult",
+      "properties": {}
+    },
+    "UpdateSubscriptionPlanInfo": {
+      "id": "UpdateSubscriptionPlanInfo",
+      "properties": {
+        "userCount": {
+          "type": "int"
+        },
+        "promoCode": {
+          "type": "string"
+        }
+      }
+    },
+    "SetUserStatusResponse": {
+      "id": "SetUserStatusResponse",
+      "properties": {
+        "result": {
+          "type": "SetUserStatusResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SetUserStatusResult": {
+      "id": "SetUserStatusResult",
+      "properties": {}
+    },
+    "ResetSubscriptionResponse": {
+      "id": "ResetSubscriptionResponse",
+      "properties": {
+        "result": {
+          "type": "ResetSubscriptionResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "ResetSubscriptionResult": {
+      "id": "ResetSubscriptionResult",
+      "properties": {}
+    },
+    "GetAccountUsersResponse": {
+      "id": "GetAccountUsersResponse",
+      "properties": {
+        "result": {
+          "type": "GetAccountUsersResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "GetAccountUsersResult": {
+      "id": "GetAccountUsersResult",
+      "properties": {
+        "max_users": {
+          "type": "int"
+        },
+        "users": {
+          "type": "List",
+          "items": {
+            "$ref": "UserInfo"
+          }
+        }
+      }
+    },
+    "UpdateUserResponse": {
+      "id": "UpdateUserResponse",
+      "properties": {
+        "result": {
+          "type": "UpdateUserResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "UpdateUserResult": {
+      "id": "UpdateUserResult",
+      "properties": {
+        "user_guid": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

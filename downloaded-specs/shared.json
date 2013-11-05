@@ -1,0 +1,385 @@
+{
+  "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0",
+  "swaggerVersion": "1.1",
+  "apiVersion": "2.12",
+  "resourcePath": "/shared",
+  "apis": [
+    {
+      "path": "/shared/files/{guid}?filename={fileName}&render={render}",
+      "operations": [
+        {
+          "nickname": "Download",
+          "summary": "Download",
+          "responseClass": "stream",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "guid",
+              "description": "GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileName",
+              "description": "File name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            },
+            {
+              "name": "render",
+              "description": "Render",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/shared/files/{guid}/xml",
+      "operations": [
+        {
+          "nickname": "GetXml",
+          "summary": "Get xml",
+          "responseClass": "stream",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "guid",
+              "description": "GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/shared/files/{guid}/html",
+      "operations": [
+        {
+          "nickname": "GetHtml",
+          "summary": "Get html",
+          "responseClass": "stream",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "guid",
+              "description": "GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/shared/packages/{*path}",
+      "operations": [
+        {
+          "nickname": "GetPackage",
+          "summary": "Get package",
+          "responseClass": "stream",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "path",
+              "description": "Path",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/shared/users/{userName}/logins",
+      "operations": [
+        {
+          "nickname": "LoginUser",
+          "summary": "Logins user using user name and password",
+          "responseClass": "UserInfoResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userName",
+              "description": "User name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "password",
+              "description": "Password",
+              "dataType": "string",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "UserInfoResponse": {
+      "id": "UserInfoResponse",
+      "properties": {
+        "result": {
+          "type": "UserInfoResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "UserInfoResult": {
+      "id": "UserInfoResult",
+      "properties": {
+        "user": {
+          "type": "UserInfo"
+        }
+      }
+    },
+    "UserInfo": {
+      "id": "UserInfo",
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "pkey": {
+          "type": "string"
+        },
+        "pswd_salt": {
+          "type": "string"
+        },
+        "claimed_id": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "storage": {
+          "type": "int"
+        },
+        "photo": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "trial": {
+          "type": "boolean"
+        },
+        "news_eanbled": {
+          "type": "boolean"
+        },
+        "alerts_eanbled": {
+          "type": "boolean"
+        },
+        "support_eanbled": {
+          "type": "boolean"
+        },
+        "support_email": {
+          "type": "string"
+        },
+        "annotation_branded": {
+          "type": "boolean"
+        },
+        "viewer_branded": {
+          "type": "boolean"
+        },
+        "is_real_time_broadcast_enabled": {
+          "type": "boolean"
+        },
+        "is_scroll_broadcast_enabled": {
+          "type": "boolean"
+        },
+        "is_zoom_broadcast_enabled": {
+          "type": "boolean"
+        },
+        "annotation_logo": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "pointer_tool_cursor": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "annotation_header_options": {
+          "type": "int"
+        },
+        "is_annotation_navigation_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_annotation_zoom_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_annotation_download_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_annotation_print_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_annotation_help_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_right_panel_enabled": {
+          "type": "boolean"
+        },
+        "is_thumbnails_panel_enabled": {
+          "type": "boolean"
+        },
+        "is_standard_header_always_shown": {
+          "type": "boolean"
+        },
+        "is_toolbar_enabled": {
+          "type": "boolean"
+        },
+        "is_text_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_rectangle_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_point_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_strikeout_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_polyline_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_typewriter_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_watermark_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_annotation_document_name_shown": {
+          "type": "boolean"
+        },
+        "annotation_navigation_icons": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "annotation_tool_icons": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "annotation_background_color": {
+          "type": "int"
+        },
+        "viewer_logo": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "viewer_options": {
+          "type": "int"
+        },
+        "is_viewer_navigation_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_viewer_zoom_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_viewer_download_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_viewer_print_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_viewer_help_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_viewer_document_name_shown": {
+          "type": "boolean"
+        },
+        "isviewer_right_mouse_button_menu_enabled": {
+          "type": "boolean"
+        },
+        "signedupOn": {
+          "type": "long"
+        },
+        "signedinOn": {
+          "type": "long"
+        },
+        "signin_count": {
+          "type": "int"
+        },
+        "roles": {
+          "type": "List",
+          "items": {
+            "$ref": "RoleInfo"
+          }
+        },
+        "signature_watermark_enabled": {
+          "type": "boolean"
+        },
+        "signature_desktop_notifications": {
+          "type": "boolean"
+        },
+        "webhook_notification_retries": {
+          "type": "int"
+        },
+        "webhook_notification_failed_recipients": {
+          "type": "string"
+        },
+        "signature_color": {
+          "type": "string"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "primary_email": {
+          "type": "string"
+        }
+      }
+    },
+    "RoleInfo": {
+      "id": "RoleInfo",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

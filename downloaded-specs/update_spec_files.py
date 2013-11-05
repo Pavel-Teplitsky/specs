@@ -1,0 +1,37 @@
+"""
+author: liosha
+For Python 3 only
+"""
+
+import urllib.request
+
+spec_host = 'http://stage-api-groupdocs.dynabic.com/v2.0/spec/spec-files/'
+local_dir = 'E:\\workspace\\workspace_python\\downloaded-specs\\'
+file_names = [
+	'annotation.json',
+	'async.json',
+	'comparison.json',
+	'comparisonPublic.json',
+	'document.json',
+	'merge.json',
+	'post.json',
+	'resources.json',
+	'shared.json',
+	'signature.json',
+	'signaturePublic.json',
+	'storage.json',
+	'system.json',
+	'user.json',
+	'admin.json'
+]
+
+for name in file_names:
+	print('Start download file `' + name + '`')
+	response = urllib.request.urlopen(spec_host + name)
+	data = response.read()
+	print('Write data...')
+	out = open(local_dir + name, 'wb')
+	out.write(data)
+	out.close()
+	print('Done')
+

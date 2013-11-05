@@ -1,0 +1,49 @@
+{
+  "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0/spec",
+  "swaggerVersion": "1.1",
+  "apiVersion": "2.12",
+  "apis": [
+    {
+      "path": "/comparison.{format}"
+    },
+    {
+      "path": "/comparisonPublic.{format}"
+    },
+    {
+      "path": "/system.{format}"
+    },
+    {
+      "path": "/merge.{format}"
+    },
+    {
+      "path": "/document.{format}"
+    },
+    {
+      "path": "/annotation.{format}"
+    },
+    {
+      "path": "/admin.{format}"
+    },
+    {
+      "path": "/user.{format}"
+    },
+    {
+      "path": "/storage.{format}"
+    },
+    {
+      "path": "/async.{format}"
+    },
+    {
+      "path": "/shared.{format}"
+    },
+    {
+      "path": "/post.{format}"
+    },
+    {
+      "path": "/signature.{format}"
+    },
+    {
+      "path": "/signaturePublic.{format}"
+    }
+  ]
+}

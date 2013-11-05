@@ -1,0 +1,2036 @@
+{
+  "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0",
+  "swaggerVersion": "1.1",
+  "apiVersion": "2.12",
+  "resourcePath": "/doc",
+  "apis": [
+    {
+      "path": "/doc/{userId}/files/{fileId}/thumbnails?page_number={pageNumber}&page_count={pageCount}&width={width}&quality={quality}&use_pdf={usePdf}&passwordSalt={passwordSalt}",
+      "operations": [
+        {
+          "nickname": "ViewDocument",
+          "summary": "View Document",
+          "responseClass": "ViewDocumentResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageNumber",
+              "description": "Page Number",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "pageCount",
+              "description": "Page Count",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "width",
+              "description": "Width",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "quality",
+              "description": "Quality",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "usePdf",
+              "description": "Use Pdf",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "passwordSalt",
+              "description": "A password hash for password protected documents",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/htmlRepresentations?page_number={pageNumber}&page_count={pageCount}&passwordSalt={passwordSalt}",
+      "operations": [
+        {
+          "nickname": "ViewDocumentAsHtml",
+          "summary": "View Document as Html",
+          "responseClass": "ViewDocumentResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageNumber",
+              "description": "Page Number",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "pageCount",
+              "description": "Page Count",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "passwordSalt",
+              "description": "A password hash for password protected documents",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/views?page_index={startIndex}&page_size={pageSize}",
+      "operations": [
+        {
+          "nickname": "GetDocumentViews",
+          "summary": "Get Document Views",
+          "responseClass": "DocumentViewsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "startIndex",
+              "description": "A historical view entry to start from. Historical entries are sorted from the recent to old ones",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "pageSize",
+              "description": "The total number of requested entries. If pageSize is equal to -1, all available entries will be returned",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/sharers",
+      "operations": [
+        {
+          "nickname": "ShareDocument",
+          "summary": "Share document",
+          "responseClass": "SharedUsersResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "sharers",
+              "description": "Sharers",
+              "dataType": "List[string]",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/password",
+      "operations": [
+        {
+          "nickname": "SetDocumentPassword",
+          "summary": "Set document password",
+          "responseClass": "SetDocumentPasswordResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "password",
+              "description": "Password",
+              "dataType": "string",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/sharers",
+      "operations": [
+        {
+          "nickname": "UnshareDocument",
+          "summary": "Unshare document",
+          "responseClass": "SharedUsersResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/folders/{folderId}/sharers",
+      "operations": [
+        {
+          "nickname": "GetFolderSharers",
+          "summary": "Get folder sharers",
+          "responseClass": "SharedUsersResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "folderId",
+              "description": "Folder Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/folders/{folderId}/sharers",
+      "operations": [
+        {
+          "nickname": "ShareFolder",
+          "summary": "Share folder",
+          "responseClass": "SharedUsersResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "folderId",
+              "description": "Folder Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "sharers",
+              "description": "Sharers",
+              "dataType": "List[string]",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/folders/{folderId}/sharers",
+      "operations": [
+        {
+          "nickname": "UnshareFolder",
+          "summary": "Unshare folder",
+          "responseClass": "SharedUsersResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "folderId",
+              "description": "Folder Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/accessinfo?mode={mode}",
+      "operations": [
+        {
+          "nickname": "SetDocumentAccessMode",
+          "summary": "Set document access mode",
+          "responseClass": "DocumentAccessInfoResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "mode",
+              "description": "Mode",
+              "dataType": "string",
+              "allowableValues": {
+                "values": [
+                  0,
+                  1,
+                  2,
+                  254,
+                  255
+                ],
+                "valueType": "LIST"
+              },
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/accessinfo",
+      "operations": [
+        {
+          "nickname": "GetDocumentAccessInfo",
+          "summary": "Get document access info",
+          "responseClass": "DocumentAccessInfoResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/metadata",
+      "operations": [
+        {
+          "nickname": "GetDocumentMetadata",
+          "summary": "Get document metadata",
+          "responseClass": "GetDocumentInfoResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{*path}",
+      "operations": [
+        {
+          "nickname": "GetDocumentMetadataByPath",
+          "summary": "Returns document metadata",
+          "responseClass": "GetDocumentInfoResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "path",
+              "description": "File path to return metadata for",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/sharer",
+      "operations": [
+        {
+          "nickname": "SetDocumentUserStatus",
+          "summary": "Set document user status",
+          "responseClass": "DocumentUserStatusResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "status",
+              "description": "Status",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/shares/{sharesTypes}?page_index={pageIndex}&page_size={pageSize}&order_by={orderBy}&order_asc={orderAsc}",
+      "operations": [
+        {
+          "nickname": "GetSharedDocuments",
+          "summary": "Get shared documents",
+          "responseClass": "SharedDocumentsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "sharesTypes",
+              "description": "Shares types",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "pageIndex",
+              "description": "Page index",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "pageSize",
+              "description": "Page size",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "orderBy",
+              "description": "Order by",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "orderAsc",
+              "description": "Order asc",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/fields?include_geometry={includeGeometry}",
+      "operations": [
+        {
+          "nickname": "GetTemplateFields",
+          "summary": "Get template fields",
+          "responseClass": "TemplateFieldsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "includeGeometry",
+              "description": "Include geometry",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/formats",
+      "operations": [
+        {
+          "nickname": "GetDocumentFormats",
+          "summary": "Get document formats",
+          "responseClass": "GetDocumentForeignTypesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/pages/{pageNumber}/images/{dimension}?quality={quality}&use_pdf={usePdf}&expires={expiresOn}&v={version}",
+      "operations": [
+        {
+          "nickname": "GetDocumentPageImage",
+          "summary": "Returns a stream of bytes representing a particular document page image.",
+          "responseClass": "stream",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "GroupDocs user global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "Document global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageNumber",
+              "description": "Document page number to get image for.",
+              "dataType": "int",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "dimension",
+              "description": "Image dimension in format '<width>x<height>' (one or both values can be omitted).",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "quality",
+              "description": "Image qualiry in range 1-100.",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "usePdf",
+              "description": "A flag indicating whether a document should be converted to PDF format before generating the image.",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "expiresOn",
+              "description": "The date and time in milliseconds since epoch the URL expires.",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/pages/{pageNumber}/htmlFixed?expires={expiresOn}",
+      "operations": [
+        {
+          "nickname": "GetDocumentPageHtmlFixed",
+          "summary": "Returns an HTML Fixed representantion of a particular document page.",
+          "responseClass": "stream",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "GroupDocs user global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "Document global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageNumber",
+              "description": "Document page number to get image for.",
+              "dataType": "int",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "expiresOn",
+              "description": "The date and time in milliseconds since epoch the URL expires.",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/pages/{pageNumber}/htmlRepresentations?expires={expiresOn}",
+      "operations": [
+        {
+          "nickname": "GetDocumentPageHtml",
+          "summary": "Returns an HTML representantion of a particular document page.",
+          "responseClass": "stream",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "GroupDocs user global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "Document global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageNumber",
+              "description": "Document page number to get image for.",
+              "dataType": "int",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "expiresOn",
+              "description": "The date and time in milliseconds since epoch the URL expires.",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/pages/images/{dimension}/urls?first_page={firstPage}&page_count={pageCount}&quality={quality}&use_pdf={usePdf}&token={token}",
+      "operations": [
+        {
+          "nickname": "GetDocumentPagesImageUrls",
+          "summary": "Returns a list of URLs pointing to document page images.",
+          "responseClass": "GetImageUrlsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "GroupDocs user global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "Document global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "firstPage",
+              "description": "Document page number to start from.",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "pageCount",
+              "description": "Page count to return URLs for.",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "dimension",
+              "description": "Image dimension in format '<width>x<height>' (one or both values can be omitted).",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "quality",
+              "description": "Image qualiry in range 1-100.",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "usePdf",
+              "description": "A flag indicating whether a document should be converted to PDF format before generating the image.",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "token",
+              "description": "A document viewer session token returned by the View Document request.",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/pages/htmlRepresentationUrls?first_page={firstPage}&page_count={pageCount}",
+      "operations": [
+        {
+          "nickname": "GetDocumentPagesHtmlUrls",
+          "summary": "Returns a list of URLs pointing to document page HTML representations.",
+          "responseClass": "GetImageUrlsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "GroupDocs user global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "Document global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "firstPage",
+              "description": "Document page number to start from.",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "pageCount",
+              "description": "Page count to return URLs for.",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/editlock",
+      "operations": [
+        {
+          "nickname": "GetEditLock",
+          "summary": "Locks a document for editing and returns editing metadata.",
+          "responseClass": "GetEditLockResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "GroupDocs user global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "Document global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/editlock",
+      "operations": [
+        {
+          "nickname": "RemoveEditLock",
+          "summary": "Removes edit lock for a document and replaces the document with its edited copy.",
+          "responseClass": "RemoveEditLockResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "GroupDocs user global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "Document global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "lockId",
+              "description": "Lock Id.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/tags",
+      "operations": [
+        {
+          "nickname": "GetDocumentTags",
+          "summary": "Returns tags assigned to the document.",
+          "responseClass": "GetTagsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "GroupDocs user global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "Document global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/tags",
+      "operations": [
+        {
+          "nickname": "SetDocumentTags",
+          "summary": "Assign tags to the document.",
+          "responseClass": "SetTagsResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "GroupDocs user global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "Document global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/tags",
+      "operations": [
+        {
+          "nickname": "RemoveDocumentTags",
+          "summary": "Removes tags assigned to the document.",
+          "responseClass": "RemoveTagsResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "GroupDocs user global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "Document global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/content/{contentType}",
+      "operations": [
+        {
+          "nickname": "GetDocumentContent",
+          "summary": "Returns document content",
+          "responseClass": "GetDocumentContentResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "GroupDocs user global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "Document global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "contentType",
+              "description": "Content type.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "ViewDocumentResponse": {
+      "id": "ViewDocumentResponse",
+      "properties": {
+        "result": {
+          "type": "ViewDocumentResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "ViewDocumentResult": {
+      "id": "ViewDocumentResult",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "int"
+        },
+        "page_count": {
+          "type": "int"
+        },
+        "page_size": {
+          "type": "Dimension"
+        },
+        "url": {
+          "type": "string"
+        },
+        "doc_type": {
+          "type": "string"
+        },
+        "image_urls": {
+          "type": "List",
+          "items": {
+            "type": "string"
+          }
+        },
+        "token": {
+          "type": "string"
+        },
+        "pageHtml": {
+          "type": "string"
+        },
+        "pageCss": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        }
+      }
+    },
+    "Dimension": {
+      "id": "Dimension",
+      "properties": {
+        "width": {
+          "type": "int"
+        },
+        "height": {
+          "type": "int"
+        }
+      }
+    },
+    "DocumentViewsResponse": {
+      "id": "DocumentViewsResponse",
+      "properties": {
+        "result": {
+          "type": "DocumentViewsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "DocumentViewsResult": {
+      "id": "DocumentViewsResult",
+      "properties": {
+        "views": {
+          "type": "List",
+          "items": {
+            "$ref": "DocumentViewInfo"
+          }
+        }
+      }
+    },
+    "DocumentViewInfo": {
+      "id": "DocumentViewInfo",
+      "properties": {
+        "document": {
+          "type": "DocumentInfo"
+        },
+        "short_url": {
+          "type": "string"
+        },
+        "viewed_on": {
+          "type": "long"
+        }
+      }
+    },
+    "DocumentInfo": {
+      "id": "DocumentInfo",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "int"
+        },
+        "size": {
+          "type": "long"
+        },
+        "type": {
+          "type": "string"
+        },
+        "type_str": {
+          "type": "string"
+        },
+        "file_type_str": {
+          "type": "string"
+        },
+        "document_path": {
+          "type": "string"
+        },
+        "access": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "file_type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        }
+      }
+    },
+    "SharedUsersResponse": {
+      "id": "SharedUsersResponse",
+      "properties": {
+        "result": {
+          "type": "SharedUsersResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SharedUsersResult": {
+      "id": "SharedUsersResult",
+      "properties": {
+        "owner": {
+          "type": "UserInfo"
+        },
+        "shared_users": {
+          "type": "List",
+          "items": {
+            "$ref": "UserInfo"
+          }
+        }
+      }
+    },
+    "UserInfo": {
+      "id": "UserInfo",
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "pkey": {
+          "type": "string"
+        },
+        "pswd_salt": {
+          "type": "string"
+        },
+        "claimed_id": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "storage": {
+          "type": "int"
+        },
+        "photo": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "trial": {
+          "type": "boolean"
+        },
+        "news_eanbled": {
+          "type": "boolean"
+        },
+        "alerts_eanbled": {
+          "type": "boolean"
+        },
+        "support_eanbled": {
+          "type": "boolean"
+        },
+        "support_email": {
+          "type": "string"
+        },
+        "annotation_branded": {
+          "type": "boolean"
+        },
+        "viewer_branded": {
+          "type": "boolean"
+        },
+        "is_real_time_broadcast_enabled": {
+          "type": "boolean"
+        },
+        "is_scroll_broadcast_enabled": {
+          "type": "boolean"
+        },
+        "is_zoom_broadcast_enabled": {
+          "type": "boolean"
+        },
+        "annotation_logo": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "pointer_tool_cursor": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "annotation_header_options": {
+          "type": "int"
+        },
+        "is_annotation_navigation_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_annotation_zoom_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_annotation_download_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_annotation_print_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_annotation_help_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_right_panel_enabled": {
+          "type": "boolean"
+        },
+        "is_thumbnails_panel_enabled": {
+          "type": "boolean"
+        },
+        "is_standard_header_always_shown": {
+          "type": "boolean"
+        },
+        "is_toolbar_enabled": {
+          "type": "boolean"
+        },
+        "is_text_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_rectangle_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_point_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_strikeout_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_polyline_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_typewriter_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_watermark_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_annotation_document_name_shown": {
+          "type": "boolean"
+        },
+        "annotation_navigation_icons": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "annotation_tool_icons": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "annotation_background_color": {
+          "type": "int"
+        },
+        "viewer_logo": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "viewer_options": {
+          "type": "int"
+        },
+        "is_viewer_navigation_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_viewer_zoom_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_viewer_download_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_viewer_print_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_viewer_help_widget_enabled": {
+          "type": "boolean"
+        },
+        "is_viewer_document_name_shown": {
+          "type": "boolean"
+        },
+        "isviewer_right_mouse_button_menu_enabled": {
+          "type": "boolean"
+        },
+        "signedupOn": {
+          "type": "long"
+        },
+        "signedinOn": {
+          "type": "long"
+        },
+        "signin_count": {
+          "type": "int"
+        },
+        "roles": {
+          "type": "List",
+          "items": {
+            "$ref": "RoleInfo"
+          }
+        },
+        "signature_watermark_enabled": {
+          "type": "boolean"
+        },
+        "signature_desktop_notifications": {
+          "type": "boolean"
+        },
+        "webhook_notification_retries": {
+          "type": "int"
+        },
+        "webhook_notification_failed_recipients": {
+          "type": "string"
+        },
+        "signature_color": {
+          "type": "string"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "primary_email": {
+          "type": "string"
+        }
+      }
+    },
+    "RoleInfo": {
+      "id": "RoleInfo",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "SetDocumentPasswordResponse": {
+      "id": "SetDocumentPasswordResponse",
+      "properties": {
+        "result": {
+          "type": "SetDocumentPasswordResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SetDocumentPasswordResult": {
+      "id": "SetDocumentPasswordResult",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "int"
+        },
+        "size": {
+          "type": "long"
+        },
+        "type": {
+          "type": "string"
+        },
+        "type_str": {
+          "type": "string"
+        },
+        "file_type_str": {
+          "type": "string"
+        },
+        "document_path": {
+          "type": "string"
+        },
+        "access": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "file_type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        }
+      }
+    },
+    "DocumentAccessInfoResponse": {
+      "id": "DocumentAccessInfoResponse",
+      "properties": {
+        "result": {
+          "type": "DocumentAccessInfoResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "DocumentAccessInfoResult": {
+      "id": "DocumentAccessInfoResult",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "UserInfo"
+        },
+        "sharers": {
+          "type": "List",
+          "items": {
+            "$ref": "UserInfo"
+          }
+        },
+        "shared_on": {
+          "type": "long"
+        },
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "int"
+        },
+        "size": {
+          "type": "long"
+        },
+        "type": {
+          "type": "string"
+        },
+        "type_str": {
+          "type": "string"
+        },
+        "file_type_str": {
+          "type": "string"
+        },
+        "document_path": {
+          "type": "string"
+        },
+        "access": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "file_type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        }
+      }
+    },
+    "GetDocumentInfoResponse": {
+      "id": "GetDocumentInfoResponse",
+      "properties": {
+        "result": {
+          "type": "GetDocumentInfoResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "GetDocumentInfoResult": {
+      "id": "GetDocumentInfoResult",
+      "properties": {
+        "page_count": {
+          "type": "int"
+        },
+        "views_count": {
+          "type": "int"
+        },
+        "last_view": {
+          "type": "DocumentViewInfo"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        }
+      }
+    },
+    "DocumentUserStatusResponse": {
+      "id": "DocumentUserStatusResponse",
+      "properties": {
+        "result": {
+          "type": "DocumentUserStatusResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "DocumentUserStatusResult": {
+      "id": "DocumentUserStatusResult",
+      "properties": {
+        "doc_info": {
+          "type": "DocumentInfo"
+        },
+        "owner_id": {
+          "type": "double"
+        },
+        "user_id": {
+          "type": "double"
+        },
+        "user_status": {
+          "type": "string"
+        }
+      }
+    },
+    "SharedDocumentsResponse": {
+      "id": "SharedDocumentsResponse",
+      "properties": {
+        "result": {
+          "type": "SharedDocumentsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SharedDocumentsResult": {
+      "id": "SharedDocumentsResult",
+      "properties": {
+        "count": {
+          "type": "int"
+        },
+        "documents": {
+          "type": "List",
+          "items": {
+            "$ref": "SharedDocumentInfo"
+          }
+        }
+      }
+    },
+    "SharedDocumentInfo": {
+      "id": "SharedDocumentInfo",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "UserInfo"
+        },
+        "sharers": {
+          "type": "List",
+          "items": {
+            "$ref": "UserInfo"
+          }
+        },
+        "shared_on": {
+          "type": "long"
+        },
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "int"
+        },
+        "size": {
+          "type": "long"
+        },
+        "type": {
+          "type": "string"
+        },
+        "type_str": {
+          "type": "string"
+        },
+        "file_type_str": {
+          "type": "string"
+        },
+        "document_path": {
+          "type": "string"
+        },
+        "access": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "file_type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        }
+      }
+    },
+    "TemplateFieldsResponse": {
+      "id": "TemplateFieldsResponse",
+      "properties": {
+        "result": {
+          "type": "TemplateFieldsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "TemplateFieldsResult": {
+      "id": "TemplateFieldsResult",
+      "properties": {
+        "fields": {
+          "type": "List",
+          "items": {
+            "$ref": "TemplateField"
+          }
+        }
+      }
+    },
+    "TemplateField": {
+      "id": "TemplateField",
+      "properties": {
+        "page": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "rect": {
+          "type": "Rectangle"
+        }
+      }
+    },
+    "Rectangle": {
+      "id": "Rectangle",
+      "properties": {
+        "x": {
+          "type": "double"
+        },
+        "y": {
+          "type": "double"
+        },
+        "width": {
+          "type": "double"
+        },
+        "height": {
+          "type": "double"
+        }
+      }
+    },
+    "GetDocumentForeignTypesResponse": {
+      "id": "GetDocumentForeignTypesResponse",
+      "properties": {
+        "result": {
+          "type": "GetDocumentForeignTypesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "GetDocumentForeignTypesResult": {
+      "id": "GetDocumentForeignTypesResult",
+      "properties": {
+        "types": {
+          "type": "List",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "GetImageUrlsResponse": {
+      "id": "GetImageUrlsResponse",
+      "properties": {
+        "result": {
+          "type": "GetImageUrlsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "GetImageUrlsResult": {
+      "id": "GetImageUrlsResult",
+      "properties": {
+        "url": {
+          "type": "List",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "GetEditLockResponse": {
+      "id": "GetEditLockResponse",
+      "properties": {
+        "result": {
+          "type": "GetEditLockResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "GetEditLockResult": {
+      "id": "GetEditLockResult",
+      "properties": {
+        "doc_guid": {
+          "type": "string"
+        },
+        "file_id": {
+          "type": "string"
+        },
+        "edit_url": {
+          "type": "string"
+        }
+      }
+    },
+    "RemoveEditLockResponse": {
+      "id": "RemoveEditLockResponse",
+      "properties": {
+        "result": {
+          "type": "RemoveEditLockResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "RemoveEditLockResult": {
+      "id": "RemoveEditLockResult",
+      "properties": {
+        "doc_version": {
+          "type": "int"
+        }
+      }
+    },
+    "GetTagsResponse": {
+      "id": "GetTagsResponse",
+      "properties": {
+        "result": {
+          "type": "GetTagsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "GetTagsResult": {
+      "id": "GetTagsResult",
+      "properties": {
+        "document_id": {
+          "type": "double"
+        },
+        "tags": {
+          "type": "List",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "SetTagsResponse": {
+      "id": "SetTagsResponse",
+      "properties": {
+        "result": {
+          "type": "SetTagsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SetTagsResult": {
+      "id": "SetTagsResult",
+      "properties": {
+        "document_id": {
+          "type": "double"
+        }
+      }
+    },
+    "RemoveTagsResponse": {
+      "id": "RemoveTagsResponse",
+      "properties": {
+        "result": {
+          "type": "RemoveTagsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "RemoveTagsResult": {
+      "id": "RemoveTagsResult",
+      "properties": {
+        "document_id": {
+          "type": "double"
+        }
+      }
+    },
+    "GetDocumentContentResponse": {
+      "id": "GetDocumentContentResponse",
+      "properties": {
+        "result": {
+          "type": "GetDocumentContentResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "GetDocumentContentResult": {
+      "id": "GetDocumentContentResult",
+      "properties": {
+        "content": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

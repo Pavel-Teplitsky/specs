@@ -1,0 +1,1634 @@
+{
+  "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0",
+  "swaggerVersion": "1.1",
+  "apiVersion": "2.12",
+  "resourcePath": "/signature/public",
+  "apis": [
+    {
+      "path": "/signature/public/envelopes/{envelopeGuid}/documents/{documentGuid}/recipient/{recipientGuid}/field/{fieldGuid}",
+      "operations": [
+        {
+          "nickname": "PublicFillEnvelopeField",
+          "summary": "Fill envelope field",
+          "responseClass": "SignatureEnvelopeFieldResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "envelopeGuid",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentGuid",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientGuid",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldGuid",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "postData",
+              "description": "Data to be placed in field",
+              "dataType": "string",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/envelopes/{envelopeGuid}/recipient/{recipientGuid}/sign",
+      "operations": [
+        {
+          "nickname": "PublicSignEnvelope",
+          "summary": "Sign envelope",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "envelopeGuid",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientGuid",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/envelopes/{envelopeGuid}/recipient/{recipientGuid}/documents",
+      "operations": [
+        {
+          "nickname": "PublicGetEnvelopeDocuments",
+          "summary": "Get documents in envelope",
+          "responseClass": "SignatureEnvelopeDocumentsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "envelopeGuid",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientGuid",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/envelopes/{envelopeGuid}/recipients",
+      "operations": [
+        {
+          "nickname": "PublicGetEnvelopeRecipients",
+          "summary": "Get signature envelope recipients",
+          "responseClass": "SignatureEnvelopeRecipientsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "envelopeGuid",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/envelopes/{envelopeGuid}/fields?document={documentGuid}&recipient={recipientGuid}",
+      "operations": [
+        {
+          "nickname": "PublicGetSignatureEnvelopeFields",
+          "summary": "Get signature field for document in envelope per recipient",
+          "responseClass": "SignatureEnvelopeFieldsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "envelopeGuid",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentGuid",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            },
+            {
+              "name": "recipientGuid",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/envelopes/{envelopeGuid}/recipient/{recipientGuid}",
+      "operations": [
+        {
+          "nickname": "PublicGetSignatureEnvelope",
+          "summary": "Get signature envelope",
+          "responseClass": "SignatureEnvelopeResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "envelopeGuid",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientGuid",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/envelopes/{envelopeGuid}/recipient/{recipientGuid}/documents/get",
+      "operations": [
+        {
+          "nickname": "PublicGetSignedEnvelopeDocuments",
+          "summary": "Get signed envelope documents",
+          "responseClass": "stream",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "envelopeGuid",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientGuid",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/forms/{formGuid}/fill",
+      "operations": [
+        {
+          "nickname": "PublicFillSignatureForm",
+          "summary": "Fill signature form",
+          "responseClass": "SignatureFormParticipantResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "formGuid",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/forms/{formGuid}/documents/{documentGuid}/participant/{participantGuid}/field/{fieldGuid}?participantAuthSignature={authSignature}",
+      "operations": [
+        {
+          "nickname": "PublicFillFormField",
+          "summary": "Fill form field",
+          "responseClass": "SignatureFormFieldResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "formGuid",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentGuid",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldGuid",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "authSignature",
+              "description": "Authentication signature",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            },
+            {
+              "name": "postData",
+              "description": "Data to be placed in field",
+              "dataType": "string",
+              "required": false,
+              "paramType": "body"
+            },
+            {
+              "name": "participantIdId",
+              "description": "Participant GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/forms/{formGuid}/participant/{participantGuid}/sign?participantAuthSignature={authSignature}",
+      "operations": [
+        {
+          "nickname": "PublicSignForm",
+          "summary": "Sign Form",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "formGuid",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "participantGuid",
+              "description": "Participant GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "authSignature",
+              "description": "Authentication signature",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/forms/{formGuid}",
+      "operations": [
+        {
+          "nickname": "PublicGetSignatureForm",
+          "summary": "Get signature form",
+          "responseClass": "SignatureFormResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "formGuid",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/forms/{formGuid}/documents",
+      "operations": [
+        {
+          "nickname": "PublicGetSignatureFormDocuments",
+          "summary": "Get documents in form",
+          "responseClass": "SignatureFormDocumentsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "formGuid",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/forms/{formGuid}/fields?document={documentGuid}&participant={participantGuid}",
+      "operations": [
+        {
+          "nickname": "PublicGetSignatureFormFields",
+          "summary": "Get form fields for document in form per participant",
+          "responseClass": "SignatureFormFieldsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "formGuid",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentGuid",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            },
+            {
+              "name": "participantGuid",
+              "description": "Participant GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/forms/{formGuid}/participant/{participantGuid}/documents/get",
+      "operations": [
+        {
+          "nickname": "PublicGetSignedFormDocuments",
+          "summary": "Get signed form documents",
+          "responseClass": "stream",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "formGuid",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "participantGuid",
+              "description": "Participant GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/forms/{formGuid}/participants/{participantGuid}",
+      "operations": [
+        {
+          "nickname": "GetSignatureFormParticipant",
+          "summary": "Get signature form participant",
+          "responseClass": "SignatureFormParticipantResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "formGuid",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "participantGuid",
+              "description": "Participant GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/documents/{documentGuid}/sign",
+      "operations": [
+        {
+          "nickname": "PublicSignDocument",
+          "summary": "Sign document",
+          "responseClass": "SignatureSignDocumentResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "documentGuid",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settings",
+              "description": "Settings of the signing document",
+              "dataType": "PublicSignatureSignDocumentSignerSettingsInfo",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/verify",
+      "operations": [
+        {
+          "nickname": "PublicVerifyDocument",
+          "summary": "Verify",
+          "responseClass": "SignatureVerifyDocumentResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "postData",
+              "description": "Document to verify",
+              "dataType": "stream",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/documents/{jobGuid}/status",
+      "operations": [
+        {
+          "nickname": "PublicGetSignDocumentStatus",
+          "summary": "Get signed document status",
+          "responseClass": "SignatureSignDocumentStatusResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "jobGuid",
+              "description": "Job GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/documents/{documentGuid}/fields",
+      "operations": [
+        {
+          "nickname": "PublicGetDocumentFields",
+          "summary": "Sign document",
+          "responseClass": "SignatureDocumentFieldsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "documentGuid",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/envelopes/{envelopeGuid}/fields/recipient/{recipientGuid}/field/{fieldGuid}",
+      "operations": [
+        {
+          "nickname": "GetSignatureEnvelopeFieldData",
+          "summary": "Get signed envelope field data",
+          "responseClass": "stream",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "envelopeGuid",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientGuid",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldGuid",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "SignatureEnvelopeFieldResponse": {
+      "id": "SignatureEnvelopeFieldResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureEnvelopeFieldResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SignatureEnvelopeFieldResult": {
+      "id": "SignatureEnvelopeFieldResult",
+      "properties": {
+        "envelopeId": {
+          "type": "string"
+        },
+        "documentId": {
+          "type": "string"
+        },
+        "recipientId": {
+          "type": "string"
+        },
+        "field": {
+          "type": "SignatureEnvelopeFieldInfo"
+        }
+      }
+    },
+    "SignatureEnvelopeFieldInfo": {
+      "id": "SignatureEnvelopeFieldInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "envelopeId": {
+          "type": "string"
+        },
+        "recipientId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "mandatory": {
+          "type": "boolean"
+        },
+        "order": {
+          "type": "double"
+        },
+        "regularExpression": {
+          "type": "string"
+        },
+        "getDataFrom": {
+          "type": "string"
+        },
+        "data": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "fillTimeStamp": {
+          "type": "string"
+        },
+        "signatureFieldId": {
+          "type": "double"
+        },
+        "locations": {
+          "type": "List",
+          "items": {
+            "$ref": "SignatureEnvelopeFieldLocationInfo"
+          }
+        },
+        "fieldType": {
+          "type": "int"
+        },
+        "acceptableValues": {
+          "type": "string"
+        },
+        "defaultValue": {
+          "type": "string"
+        },
+        "tooltip": {
+          "type": "string"
+        },
+        "guidanceText": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopeFieldLocationInfo": {
+      "id": "SignatureEnvelopeFieldLocationInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "documentId": {
+          "type": "string"
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "page": {
+          "type": "int"
+        },
+        "locationX": {
+          "type": "double"
+        },
+        "locationY": {
+          "type": "double"
+        },
+        "locationWidth": {
+          "type": "double"
+        },
+        "locationHeight": {
+          "type": "double"
+        },
+        "fontName": {
+          "type": "string"
+        },
+        "fontColor": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "double"
+        },
+        "fontBold": {
+          "type": "boolean"
+        },
+        "fontItalic": {
+          "type": "boolean"
+        },
+        "fontUnderline": {
+          "type": "boolean"
+        },
+        "align": {
+          "type": "int"
+        }
+      }
+    },
+    "SignatureStatusResponse": {
+      "id": "SignatureStatusResponse",
+      "properties": {
+        "result": {
+          "type": "Result"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "Result": {
+      "id": "Result",
+      "properties": {}
+    },
+    "SignatureEnvelopeDocumentsResponse": {
+      "id": "SignatureEnvelopeDocumentsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureEnvelopeDocumentsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SignatureEnvelopeDocumentsResult": {
+      "id": "SignatureEnvelopeDocumentsResult",
+      "properties": {
+        "envelopeId": {
+          "type": "string"
+        },
+        "documents": {
+          "type": "List",
+          "items": {
+            "$ref": "SignatureEnvelopeDocumentInfo"
+          }
+        }
+      }
+    },
+    "SignatureEnvelopeDocumentInfo": {
+      "id": "SignatureEnvelopeDocumentInfo",
+      "properties": {
+        "documentId": {
+          "type": "string"
+        },
+        "envelopeId": {
+          "type": "string"
+        },
+        "order": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "originalDocumentMD5": {
+          "type": "string"
+        },
+        "finalDocumentMD5": {
+          "type": "string"
+        },
+        "originalDocumentPagesCount": {
+          "type": "int"
+        },
+        "fieldsCount": {
+          "type": "int"
+        },
+        "originalDocumentImportedFields": {
+          "type": "List",
+          "items": {
+            "$ref": "SignatureDocumentFieldInfo"
+          }
+        },
+        "originalDocumentId": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureDocumentFieldInfo": {
+      "id": "SignatureDocumentFieldInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "mandatory": {
+          "type": "boolean"
+        },
+        "signatureFieldId": {
+          "type": "double"
+        },
+        "locations": {
+          "type": "List",
+          "items": {
+            "$ref": "SignatureDocumentFieldLocationInfo"
+          }
+        },
+        "fieldType": {
+          "type": "int"
+        },
+        "acceptableValues": {
+          "type": "string"
+        },
+        "defaultValue": {
+          "type": "string"
+        },
+        "tooltip": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureDocumentFieldLocationInfo": {
+      "id": "SignatureDocumentFieldLocationInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "page": {
+          "type": "int"
+        },
+        "locationX": {
+          "type": "double"
+        },
+        "locationY": {
+          "type": "double"
+        },
+        "locationWidth": {
+          "type": "double"
+        },
+        "locationHeight": {
+          "type": "double"
+        },
+        "fontName": {
+          "type": "string"
+        },
+        "fontColor": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "double"
+        }
+      }
+    },
+    "SignatureEnvelopeRecipientsResponse": {
+      "id": "SignatureEnvelopeRecipientsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureEnvelopeRecipientsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SignatureEnvelopeRecipientsResult": {
+      "id": "SignatureEnvelopeRecipientsResult",
+      "properties": {
+        "envelopeId": {
+          "type": "string"
+        },
+        "recipients": {
+          "type": "List",
+          "items": {
+            "$ref": "SignatureEnvelopeRecipientInfo"
+          }
+        }
+      }
+    },
+    "SignatureEnvelopeRecipientInfo": {
+      "id": "SignatureEnvelopeRecipientInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "userGuid": {
+          "type": "string"
+        },
+        "order": {
+          "type": "int"
+        },
+        "roleId": {
+          "type": "double"
+        },
+        "status": {
+          "type": "int"
+        },
+        "statusMessage": {
+          "type": "string"
+        },
+        "statusDateTime": {
+          "type": "string"
+        },
+        "delegatedRecipientId": {
+          "type": "double"
+        },
+        "signatureFingerprint": {
+          "type": "string"
+        },
+        "signatureHost": {
+          "type": "string"
+        },
+        "signatureLocation": {
+          "type": "string"
+        },
+        "signatureBrowser": {
+          "type": "string"
+        },
+        "embedUrl": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopeFieldsResponse": {
+      "id": "SignatureEnvelopeFieldsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureEnvelopeFieldsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SignatureEnvelopeFieldsResult": {
+      "id": "SignatureEnvelopeFieldsResult",
+      "properties": {
+        "envelopeId": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "List",
+          "items": {
+            "$ref": "SignatureEnvelopeFieldInfo"
+          }
+        }
+      }
+    },
+    "SignatureEnvelopeResponse": {
+      "id": "SignatureEnvelopeResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureEnvelopeResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SignatureEnvelopeResult": {
+      "id": "SignatureEnvelopeResult",
+      "properties": {
+        "envelope": {
+          "type": "SignatureEnvelopeInfo"
+        }
+      }
+    },
+    "SignatureEnvelopeInfo": {
+      "id": "SignatureEnvelopeInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "creationDateTime": {
+          "type": "string"
+        },
+        "updatedDateTime": {
+          "type": "string"
+        },
+        "ownerGuid": {
+          "type": "string"
+        },
+        "status": {
+          "type": "int"
+        },
+        "statusDateTime": {
+          "type": "string"
+        },
+        "reminderTime": {
+          "type": "double"
+        },
+        "stepExpireTime": {
+          "type": "double"
+        },
+        "envelopeExpireTime": {
+          "type": "double"
+        },
+        "ownerShouldSign": {
+          "type": "boolean"
+        },
+        "orderedSignature": {
+          "type": "boolean"
+        },
+        "emailSubject": {
+          "type": "string"
+        },
+        "emailBody": {
+          "type": "string"
+        },
+        "documentsCount": {
+          "type": "double"
+        },
+        "documentsPages": {
+          "type": "double"
+        },
+        "recipients": {
+          "type": "List",
+          "items": {
+            "$ref": "SignatureEnvelopeRecipientInfo"
+          }
+        },
+        "waterMarkText": {
+          "type": "string"
+        },
+        "waterMarkImage": {
+          "type": "string"
+        },
+        "attachSignedDocument": {
+          "type": "boolean"
+        },
+        "includeViewLink": {
+          "type": "boolean"
+        },
+        "canBeCommented": {
+          "type": "boolean"
+        },
+        "inPersonSign": {
+          "type": "boolean"
+        },
+        "ownerName": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureFormParticipantResponse": {
+      "id": "SignatureFormParticipantResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureFormParticipantResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SignatureFormParticipantResult": {
+      "id": "SignatureFormParticipantResult",
+      "properties": {
+        "formId": {
+          "type": "string"
+        },
+        "participant": {
+          "type": "SignatureFormParticipantInfo"
+        }
+      }
+    },
+    "SignatureFormParticipantInfo": {
+      "id": "SignatureFormParticipantInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "documentGuid": {
+          "type": "string"
+        },
+        "fillDateTime": {
+          "type": "string"
+        },
+        "status": {
+          "type": "int"
+        }
+      }
+    },
+    "SignatureFormFieldResponse": {
+      "id": "SignatureFormFieldResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureFormFieldResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SignatureFormFieldResult": {
+      "id": "SignatureFormFieldResult",
+      "properties": {
+        "formId": {
+          "type": "string"
+        },
+        "documentId": {
+          "type": "string"
+        },
+        "participantId": {
+          "type": "string"
+        },
+        "field": {
+          "type": "SignatureFormFieldInfo"
+        }
+      }
+    },
+    "SignatureFormFieldInfo": {
+      "id": "SignatureFormFieldInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "formGuid": {
+          "type": "string"
+        },
+        "participantGuid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "mandatory": {
+          "type": "boolean"
+        },
+        "regularExpression": {
+          "type": "string"
+        },
+        "data": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
+        },
+        "fillTimeStamp": {
+          "type": "string"
+        },
+        "locations": {
+          "type": "List",
+          "items": {
+            "$ref": "SignatureFormFieldLocationInfo"
+          }
+        },
+        "fieldType": {
+          "type": "int"
+        },
+        "acceptableValues": {
+          "type": "string"
+        },
+        "defaultValue": {
+          "type": "string"
+        },
+        "tooltip": {
+          "type": "string"
+        },
+        "guidanceText": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureFormFieldLocationInfo": {
+      "id": "SignatureFormFieldLocationInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "documentGuid": {
+          "type": "string"
+        },
+        "fieldGuid": {
+          "type": "string"
+        },
+        "page": {
+          "type": "int"
+        },
+        "locationX": {
+          "type": "double"
+        },
+        "locationY": {
+          "type": "double"
+        },
+        "locationWidth": {
+          "type": "double"
+        },
+        "locationHeight": {
+          "type": "double"
+        },
+        "fontName": {
+          "type": "string"
+        },
+        "fontColor": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "double"
+        },
+        "fontBold": {
+          "type": "boolean"
+        },
+        "fontItalic": {
+          "type": "boolean"
+        },
+        "fontUnderline": {
+          "type": "boolean"
+        },
+        "align": {
+          "type": "int"
+        }
+      }
+    },
+    "SignatureFormResponse": {
+      "id": "SignatureFormResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureFormResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SignatureFormResult": {
+      "id": "SignatureFormResult",
+      "properties": {
+        "form": {
+          "type": "SignatureFormInfo"
+        }
+      }
+    },
+    "SignatureFormInfo": {
+      "id": "SignatureFormInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "ownerGuid": {
+          "type": "string"
+        },
+        "templateGuid": {
+          "type": "string"
+        },
+        "createdTimeStamp": {
+          "type": "string"
+        },
+        "status": {
+          "type": "int"
+        },
+        "statusDateTime": {
+          "type": "string"
+        },
+        "documentsCount": {
+          "type": "double"
+        },
+        "documentsPages": {
+          "type": "double"
+        },
+        "participantsCount": {
+          "type": "double"
+        },
+        "fieldsInFinalFileName": {
+          "type": "List",
+          "items": {
+            "type": "string"
+          }
+        },
+        "canParticipantDownloadForm": {
+          "type": "boolean"
+        },
+        "waterMarkText": {
+          "type": "string"
+        },
+        "waterMarkImage": {
+          "type": "string"
+        },
+        "fieldsCount": {
+          "type": "double"
+        },
+        "notifyOwnerOnSign": {
+          "type": "boolean"
+        },
+        "attachSignedDocument": {
+          "type": "boolean"
+        }
+      }
+    },
+    "SignatureFormDocumentsResponse": {
+      "id": "SignatureFormDocumentsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureFormDocumentsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SignatureFormDocumentsResult": {
+      "id": "SignatureFormDocumentsResult",
+      "properties": {
+        "formId": {
+          "type": "string"
+        },
+        "documents": {
+          "type": "List",
+          "items": {
+            "$ref": "SignatureFormDocumentInfo"
+          }
+        }
+      }
+    },
+    "SignatureFormDocumentInfo": {
+      "id": "SignatureFormDocumentInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "formGuid": {
+          "type": "string"
+        },
+        "documentGuid": {
+          "type": "string"
+        },
+        "originalDocumentGuid": {
+          "type": "string"
+        },
+        "originalDocumentMD5": {
+          "type": "string"
+        },
+        "assignedDateTime": {
+          "type": "string"
+        },
+        "order": {
+          "type": "int"
+        }
+      }
+    },
+    "SignatureFormFieldsResponse": {
+      "id": "SignatureFormFieldsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureFormFieldsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SignatureFormFieldsResult": {
+      "id": "SignatureFormFieldsResult",
+      "properties": {
+        "formId": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "List",
+          "items": {
+            "$ref": "SignatureFormFieldInfo"
+          }
+        }
+      }
+    },
+    "SignatureSignDocumentResponse": {
+      "id": "SignatureSignDocumentResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureSignDocumentResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SignatureSignDocumentResult": {
+      "id": "SignatureSignDocumentResult",
+      "properties": {
+        "jobId": {
+          "type": "string"
+        }
+      }
+    },
+    "PublicSignatureSignDocumentSignerSettingsInfo": {
+      "id": "PublicSignatureSignDocumentSignerSettingsInfo",
+      "properties": {
+        "waterMarkText": {
+          "type": "string"
+        },
+        "waterMarkImage": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "top": {
+          "type": "double"
+        },
+        "left": {
+          "type": "double"
+        },
+        "width": {
+          "type": "double"
+        },
+        "height": {
+          "type": "double"
+        },
+        "placeSignatureOn": {
+          "type": "string"
+        },
+        "data": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "List`1"
+        }
+      }
+    },
+    "SignatureVerifyDocumentResponse": {
+      "id": "SignatureVerifyDocumentResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureVerifyDocumentResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SignatureVerifyDocumentResult": {
+      "id": "SignatureVerifyDocumentResult",
+      "properties": {
+        "authentic": {
+          "type": "boolean"
+        },
+        "datesSigned": {
+          "type": "List",
+          "items": {
+            "type": "string"
+          }
+        },
+        "references": {
+          "type": "List",
+          "items": {
+            "type": "string"
+          }
+        },
+        "recipients": {
+          "type": "List",
+          "items": {
+            "$ref": "SignatureEnvelopeRecipientInfo"
+          }
+        }
+      }
+    },
+    "SignatureSignDocumentStatusResponse": {
+      "id": "SignatureSignDocumentStatusResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureSignDocumentStatusResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SignatureSignDocumentStatusResult": {
+      "id": "SignatureSignDocumentStatusResult",
+      "properties": {
+        "documents": {
+          "type": "List",
+          "items": {
+            "$ref": "SignatureSignDocumentStatusInfo"
+          }
+        }
+      }
+    },
+    "SignatureSignDocumentStatusInfo": {
+      "id": "SignatureSignDocumentStatusInfo",
+      "properties": {
+        "documentId": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureDocumentFieldsResponse": {
+      "id": "SignatureDocumentFieldsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureDocumentFieldsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SignatureDocumentFieldsResult": {
+      "id": "SignatureDocumentFieldsResult",
+      "properties": {
+        "documentId": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "List",
+          "items": {
+            "$ref": "SignatureDocumentFieldInfo"
+          }
+        }
+      }
+    }
+  }
+}
