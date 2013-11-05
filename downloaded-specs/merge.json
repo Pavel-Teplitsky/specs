@@ -1307,15 +1307,15 @@
               "paramType": "query"
             },
             {
-              "name": "Groupdocs-Move",
-              "description": "File ID (move)",
+              "name": "Groupdocs-Copy",
+              "description": "File ID (copy)",
               "dataType": "string",
               "required": false,
               "paramType": "header"
             },
             {
-              "name": "Groupdocs-Copy",
-              "description": "File ID (copy)",
+              "name": "Groupdocs-Move",
+              "description": "File ID (move)",
               "dataType": "string",
               "required": false,
               "paramType": "header"
