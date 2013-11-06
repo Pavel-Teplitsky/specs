@@ -13,28 +13,25 @@
       "path": "/system.{format}"
     },
     {
-      "path": "/merge.{format}"
-    },
-    {
-      "path": "/document.{format}"
-    },
-    {
-      "path": "/annotation.{format}"
-    },
-    {
-      "path": "/admin.{format}"
-    },
-    {
       "path": "/user.{format}"
     },
     {
-      "path": "/storage.{format}"
+      "path": "/annotation.{format}"
     },
     {
       "path": "/async.{format}"
     },
     {
       "path": "/shared.{format}"
+    },
+    {
+      "path": "/storage.{format}"
+    },
+    {
+      "path": "/document.{format}"
+    },
+    {
+      "path": "/merge.{format}"
     },
     {
       "path": "/post.{format}"

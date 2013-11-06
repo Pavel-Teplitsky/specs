@@ -4583,10 +4583,12 @@
         "data": {
           "type": "string"
         },
-        "type": "List",
-          "items": {
-            "$ref": "SignatureDocumentFieldInfo"
-          }
+        "fields": {
+            "type": "List",
+            "items": {
+                "$ref": "SignatureFieldInfo"
+            }
+        }
       }
     },
     "SignatureSignDocumentStatusResponse": {
