@@ -1513,7 +1513,10 @@
           "type": "string"
         },
         "fields": {
-          "type": "List`1"
+          "type": "List",
+          "items": {
+            "$ref": "SignatureDocumentFieldInfo"
+          }
         }
       }
     },
