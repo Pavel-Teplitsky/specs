@@ -79,7 +79,7 @@
       ]
     },
     {
-      "path": "/system/{callerId}/plans/{family}?invalidate={invalidate}",
+      "path": "/system/{callerId}/plans/{family}",
       "operations": [
         {
           "nickname": "GetSubscriptionPlans",
