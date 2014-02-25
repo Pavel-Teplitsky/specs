@@ -1,11 +1,11 @@
 {
   "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.12.37.7924",
+  "apiVersion": "2.12",
   "resourcePath": "/admin",
   "apis": [
     {
-      "path": "/admin/{callerId}/users?page={page}&pageSize={pageSize}&nickName={nickName}&firstName={firstName}&lastName={lastName}&signupDate={signupDate}&sortField={sortField}",
+      "path": "/admin/{callerId}/users?page={page}&pageSize={pageSize}&nickName={nickName}&firstName={firstName}&lastName={lastName}&signupDate={signupDate}&sortField={sortField}&sortOrder={sortOrder}",
       "operations": [
         {
           "nickname": "GetUsers",
@@ -240,6 +240,40 @@
           ]
         }
       ]
+    },
+    {
+      "path": "/admin/{callerId}/users/{userId}/clearUserCache/{userGuid}",
+      "operations": [
+        {
+          "nickname": "ClearUserCache",
+          "summary": "Clear user cache from Admin",
+          "responseClass": "DeleteResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userId",
+              "description": "User ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userGuid",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
     }
   ],
   "models": {
@@ -323,6 +357,9 @@
           "type": "boolean"
         },
         "support_email": {
+          "type": "string"
+        },
+        "apps": {
           "type": "string"
         },
         "annotation_branded": {
@@ -481,8 +518,11 @@
         "signature_color": {
           "type": "string"
         },
+        "signature_save_field_changes_automatically": {
+          "type": "boolean"
+        },
         "id": {
-          "type": "double"
+          "type": "long"
         },
         "guid": {
           "type": "string"
@@ -671,6 +711,27 @@
           "type": "string"
         }
       }
+    },
+    "DeleteResponse": {
+      "id": "DeleteResponse",
+      "properties": {
+        "result": {
+          "type": "DeleteResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "DeleteResult": {
+      "id": "DeleteResult",
+      "properties": {}
     }
   }
 }

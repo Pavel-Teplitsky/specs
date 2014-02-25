@@ -1,7 +1,7 @@
 {
-  "basePath": "https://api.groupdocs.com/v2.0",
+  "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.12.37.7924",
+  "apiVersion": "2.12",
   "resourcePath": "/mgmt",
   "apis": [
     {
@@ -811,6 +811,9 @@
         "support_email": {
           "type": "string"
         },
+        "apps": {
+          "type": "string"
+        },
         "annotation_branded": {
           "type": "boolean"
         },
@@ -967,8 +970,11 @@
         "signature_color": {
           "type": "string"
         },
+        "signature_save_field_changes_automatically": {
+          "type": "boolean"
+        },
         "id": {
-          "type": "double"
+          "type": "long"
         },
         "guid": {
           "type": "string"
@@ -1396,7 +1402,7 @@
       "id": "UpdateAccountUserResult",
       "properties": {
         "id": {
-          "type": "double"
+          "type": "long"
         },
         "guid": {
           "type": "string"
@@ -1427,7 +1433,7 @@
       "id": "DeleteAccountUserResult",
       "properties": {
         "id": {
-          "type": "double"
+          "type": "long"
         },
         "guid": {
           "type": "string"
@@ -1486,7 +1492,7 @@
       "id": "UserIdentity",
       "properties": {
         "id": {
-          "type": "double"
+          "type": "long"
         },
         "guid": {
           "type": "string"

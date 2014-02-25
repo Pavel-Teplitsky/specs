@@ -1,11 +1,11 @@
 {
-  "basePath": "https://api.groupdocs.com/v2.0",
+  "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.12.37.7924",
+  "apiVersion": "2.12",
   "resourcePath": "/comparison",
   "apis": [
     {
-      "path": "/comparison/{userId}/comparison/download?resultFileId={resultFileId}&format={format}",
+      "path": "/comparison/{resultFileId}/download?format={format}",
       "operations": [
         {
           "nickname": "DownloadResult",
@@ -14,18 +14,11 @@
           "httpMethod": "GET",
           "parameters": [
             {
-              "name": "userId",
-              "description": "User GUID",
-              "dataType": "string",
-              "required": true,
-              "paramType": "path"
-            },
-            {
               "name": "resultFileId",
               "description": "Comparison result file GUID",
               "dataType": "string",
               "required": true,
-              "paramType": "query"
+              "paramType": "path"
             },
             {
               "name": "format",
@@ -45,7 +38,168 @@
           ]
         }
       ]
+    },
+    {
+      "path": "/comparison/{resultFileId}/changes",
+      "operations": [
+        {
+          "nickname": "GetChanges",
+          "summary": "Get changes",
+          "responseClass": "ChangesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "resultFileId",
+              "description": "Comparison result file GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/comparison/{resultFileId}/changes",
+      "operations": [
+        {
+          "nickname": "UpdateChanges",
+          "summary": "Update changes",
+          "responseClass": "ChangesResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "resultFileId",
+              "description": "Comparison result file GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            },
+            {
+              "name": "changes",
+              "description": "Comparison changes to update (accept or reject)",
+              "dataType": "List[ChangeInfo]",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
     }
   ],
-  "models": {}
+  "models": {
+    "ChangesResponse": {
+      "id": "ChangesResponse",
+      "properties": {
+        "result": {
+          "type": "ChangesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "ChangesResult": {
+      "id": "ChangesResult",
+      "properties": {
+        "result_file_Id": {
+          "type": "string"
+        },
+        "source_file_Id": {
+          "type": "string"
+        },
+        "target_file_Id": {
+          "type": "string"
+        },
+        "source_file_name": {
+          "type": "string"
+        },
+        "target_file_name": {
+          "type": "string"
+        },
+        "changes": {
+          "type": "List",
+          "items": {
+            "$ref": "ChangeInfo"
+          }
+        }
+      }
+    },
+    "ChangeInfo": {
+      "id": "ChangeInfo",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "type": {
+          "type": "string"
+        },
+        "typeStr": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "actionStr": {
+          "type": "string"
+        },
+        "page": {
+          "type": "Page"
+        },
+        "box": {
+          "type": "Rectangle"
+        },
+        "text": {
+          "type": "string"
+        },
+        "styleChanges": {
+          "type": "List",
+          "items": {
+            "$ref": "StyleChangeInfo"
+          }
+        }
+      }
+    },
+    "Page": {
+      "id": "Page",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "w": {
+          "type": "double"
+        },
+        "h": {
+          "type": "double"
+        }
+      }
+    },
+    "Rectangle": {
+      "id": "Rectangle",
+      "properties": {
+        "x": {
+          "type": "double"
+        },
+        "y": {
+          "type": "double"
+        },
+        "width": {
+          "type": "double"
+        },
+        "height": {
+          "type": "double"
+        }
+      }
+    },
+    "StyleChangeInfo": {
+      "id": "StyleChangeInfo",
+      "properties": {}
+    }
+  }
 }

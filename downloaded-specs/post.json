@@ -1,7 +1,7 @@
 {
-  "basePath": "https://api.groupdocs.com/v2.0",
+  "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.12.37.7924",
+  "apiVersion": "2.12",
   "resourcePath": "/post",
   "apis": [
     {

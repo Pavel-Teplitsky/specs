@@ -1,7 +1,7 @@
 {
-  "basePath": "https://api.groupdocs.com/v2.0/spec",
+  "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0/spec",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.12.37.7924",
+  "apiVersion": "2.12",
   "apis": [
     {
       "path": "/comparison.{format}"
@@ -13,10 +13,19 @@
       "path": "/system.{format}"
     },
     {
+      "path": "/merge.{format}"
+    },
+    {
+      "path": "/document.{format}"
+    },
+    {
+      "path": "/admin.{format}"
+    },
+    {
       "path": "/user.{format}"
     },
     {
-      "path": "/annotation.{format}"
+      "path": "/storage.{format}"
     },
     {
       "path": "/async.{format}"
@@ -25,13 +34,7 @@
       "path": "/shared.{format}"
     },
     {
-      "path": "/storage.{format}"
-    },
-    {
-      "path": "/document.{format}"
-    },
-    {
-      "path": "/merge.{format}"
+      "path": "/annotation.{format}"
     },
     {
       "path": "/post.{format}"

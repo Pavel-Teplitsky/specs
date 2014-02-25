@@ -1,10 +1,10 @@
 {
-  "basePath": "https://api.groupdocs.com/v2.0",
+  "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.12.37.7924",
+  "apiVersion": "2.12",
   "resourcePath": "/signature",
   "apis": [
-    {
+        {
       "path": "/signature/{userId}/templates/{templateGuid}/recipient?nickname={nickname}&role={roleGuid}&order={order}",
       "operations": [
         {
@@ -532,7 +532,7 @@
       ]
     },
     {
-      "path": "/signature/{userId}/templates/{templateGuid}/fields?document={documentGuid}&recipient={recipientGuid}",
+      "path": "/signature/{userId}/templates/{templateGuid}/fields?document={documentGuid}&recipient={recipientGuid}&field={fieldGuid}",
       "operations": [
         {
           "nickname": "GetSignatureTemplateFields",
@@ -564,6 +564,13 @@
             {
               "name": "recipientGuid",
               "description": "Recipient GUID",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "fieldGuid",
+              "description": "Field GUID",
               "dataType": "string",
               "required": false,
               "paramType": "query"
@@ -667,7 +674,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/contacts?firstName={firstName}&lastName={lastName}&email={email}&records={records}&page={page}&useAnd={useAnd}",
       "operations": [
         {
@@ -729,7 +736,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/contact",
       "operations": [
         {
@@ -756,7 +763,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/contacts/{contactGuid}",
       "operations": [
         {
@@ -790,7 +797,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/contacts/{contactGuid}",
       "operations": [
         {
@@ -817,7 +824,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/contacts",
       "operations": [
         {
@@ -844,7 +851,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/integration",
       "operations": [
         {
@@ -871,7 +878,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/sign",
       "operations": [
         {
@@ -898,7 +905,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/documents/{jobGuid}/status",
       "operations": [
         {
@@ -925,7 +932,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/archive",
       "operations": [
         {
@@ -952,7 +959,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/logs",
       "operations": [
         {
@@ -979,7 +986,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/envelope?name={name}&templateId={templateGuid}&envelopeId={envelopeGuid}&documentId={documentGuid}&parseFields={parseFields}",
       "operations": [
         {
@@ -1041,7 +1048,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/recipient/{recipientGuid}/decline",
       "operations": [
         {
@@ -1075,7 +1082,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/recipient/{recipientGuid}/delegate?email={recipientEmail}&firstname={recipientFirstName}&lastname={recipientLastName}",
       "operations": [
         {
@@ -1130,7 +1137,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/envelopes/{envelopeGuid}",
       "operations": [
         {
@@ -1157,7 +1164,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/document/{documentGuid}?parseFields={parseFields}&order={order}",
       "operations": [
         {
@@ -1205,7 +1212,7 @@
         }
       ]
     },
-    {
+   {
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/document/{documentGuid}",
       "operations": [
         {
@@ -1239,7 +1246,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/documents/{documentGuid}",
       "operations": [
         {
@@ -1273,7 +1280,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/documents",
       "operations": [
         {
@@ -1300,7 +1307,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/documents/get",
       "operations": [
         {
@@ -1327,7 +1334,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/documents/{documentGuid}/recipient/{recipientGuid}/field/{fieldGuid}",
       "operations": [
         {
@@ -1382,7 +1389,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/documents/{documentGuid}/field/{fieldGuid}",
       "operations": [
         {
@@ -1430,7 +1437,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/documents/{documentGuid}/recipient/{recipientGuid}/field/{fieldGuid}?signatureId={signatureGuid}",
       "operations": [
         {
@@ -1492,7 +1499,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/documents/{documentGuid}/recipient/{recipientGuid}/fields/{fieldGuid}/locations/{locationGuid}",
       "operations": [
         {
@@ -1554,7 +1561,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/fields/{fieldGuid}/locations/{locationGuid}",
       "operations": [
         {
@@ -1595,7 +1602,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/documents/{documentGuid}/field/{fieldGuid}",
       "operations": [
         {
@@ -1643,7 +1650,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/fields/{fieldGuid}",
       "operations": [
         {
@@ -1677,8 +1684,8 @@
         }
       ]
     },
-    {
-      "path": "/signature/{userId}/envelopes/{envelopeGuid}/fields?document={documentGuid}&recipient={recipientGuid}",
+ {
+      "path": "/signature/{userId}/envelopes/{envelopeGuid}/fields?document={documentGuid}&recipient={recipientGuid}&field={fieldGuid}",
       "operations": [
         {
           "nickname": "GetSignatureEnvelopeFields",
@@ -1713,12 +1720,19 @@
               "dataType": "string",
               "required": false,
               "paramType": "query"
+            },
+            {
+              "name": "fieldGuid",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
             }
           ]
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/envelopes/{envelopeGuid}",
       "operations": [
         {
@@ -1745,7 +1759,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/envelopes/{envelopeGuid}",
       "operations": [
         {
@@ -1779,7 +1793,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/recipient?email={recipientEmail}&firstname={recipientFirstName}&lastname={recipientLastName}&role={roleGuid}&order={order}",
       "operations": [
         {
@@ -1841,7 +1855,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/recipient/{recipientGuid}?email={recipientEmail}&firstname={recipientFirstName}&lastname={recipientLastName}&role={roleGuid}&order={order}",
       "operations": [
         {
@@ -1910,7 +1924,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/recipients/{recipientGuid}",
       "operations": [
         {
@@ -1944,7 +1958,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/recipients",
       "operations": [
         {
@@ -1971,7 +1985,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/envelopes/{envelopeGuid}?name={name}",
       "operations": [
         {
@@ -2005,7 +2019,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/restart",
       "operations": [
         {
@@ -2032,7 +2046,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/send",
       "operations": [
         {
@@ -2066,7 +2080,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/recipient/{recipientGuid}/sign",
       "operations": [
         {
@@ -2100,7 +2114,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/envelopes?statusId={statusId}&records={records}&page={page}&document={originalDocumentMD5}&recipient={recipientEmail}&date={date}&name={name}",
       "operations": [
         {
@@ -2169,7 +2183,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/envelopes/resources?statusIds={statusIds}",
       "operations": [
         {
@@ -2196,7 +2210,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/envelopes/recipient?statusId={statusId}&records={records}&page={page}",
       "operations": [
         {
@@ -2237,7 +2251,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/document/{documentGuid}?newName={newName}",
       "operations": [
         {
@@ -2278,7 +2292,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/cancel",
       "operations": [
         {
@@ -2305,7 +2319,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/retry",
       "operations": [
         {
@@ -2332,7 +2346,7 @@
         }
       ]
     },
-    {
+  {
       "path": "/signature/{userId}/envelopes/{envelopeGuid}/templates/{templateGuid}",
       "operations": [
         {
@@ -2366,7 +2380,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/fields?id={fieldGuid}",
       "operations": [
         {
@@ -2393,7 +2407,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/field",
       "operations": [
         {
@@ -2420,7 +2434,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/fields/{fieldGuid}",
       "operations": [
         {
@@ -2454,7 +2468,7 @@
         }
       ]
     },
-    {
+  {
       "path": "/signature/{userId}/fields/{fieldGuid}",
       "operations": [
         {
@@ -2481,7 +2495,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/forms/{formGuid}/archive",
       "operations": [
         {
@@ -2508,7 +2522,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/forms/{formGuid}/complete",
       "operations": [
         {
@@ -2535,7 +2549,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/form?name={name}&templateId={templateGuid}&assemblyId={assemblyGuid}&formId={formGuid}",
       "operations": [
         {
@@ -2590,7 +2604,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/forms/{formGuid}",
       "operations": [
         {
@@ -2617,7 +2631,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/forms/{formGuid}/document/{documentGuid}?parseFields={parseFields}&order={order}",
       "operations": [
         {
@@ -2665,7 +2679,7 @@
         }
       ]
     },
-    {
+  {
       "path": "/signature/{userId}/forms/{formGuid}/documents/{documentGuid}",
       "operations": [
         {
@@ -2699,7 +2713,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/forms/{formGuid}/documents",
       "operations": [
         {
@@ -2726,7 +2740,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/forms/{formGuid}/documents/{documentGuid}/field/{fieldGuid}",
       "operations": [
         {
@@ -2774,7 +2788,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/forms/{formGuid}/documents/{documentGuid}/fields/{fieldGuid}/locations/{locationGuid}",
       "operations": [
         {
@@ -2953,7 +2967,7 @@
       ]
     },
     {
-      "path": "/signature/{userId}/forms/{formGuid}/documents/{documentGuid}/fields",
+      "path": "/signature/{userId}/forms/{formGuid}/documents/{documentGuid}/fields?field={fieldGuid}",
       "operations": [
         {
           "nickname": "GetSignatureFormFields",
@@ -2978,6 +2992,13 @@
             {
               "name": "documentGuid",
               "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldGuid",
+              "description": "Field GUID",
               "dataType": "string",
               "required": true,
               "paramType": "path"
@@ -3347,7 +3368,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/lists",
       "operations": [
         {
@@ -3367,7 +3388,7 @@
         }
       ]
     },
-    {
+  {
       "path": "/signature/{userId}/list",
       "operations": [
         {
@@ -3394,7 +3415,7 @@
         }
       ]
     },
-    {
+  {
       "path": "/signature/{userId}/lists/{listGuid}",
       "operations": [
         {
@@ -3421,7 +3442,7 @@
         }
       ]
     },
-    {
+      {
       "path": "/signature/{userId}/roles?id={roleGuid}",
       "operations": [
         {
@@ -3550,7 +3571,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/templates?records={records}&page={page}&documentGuid={documentGuid}&recipientName={recipientName}&name={name}",
       "operations": [
         {
@@ -3605,7 +3626,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/templates/{templateGuid}",
       "operations": [
         {
@@ -3632,7 +3653,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/template?name={name}&templateId={templateGuid}&envelopeId={envelopeGuid}",
       "operations": [
         {
@@ -3680,7 +3701,7 @@
         }
       ]
     },
-    {
+{
       "path": "/signature/{userId}/templates/{templateGuid}",
       "operations": [
         {
@@ -3714,7 +3735,7 @@
         }
       ]
     },
-    {
+ {
       "path": "/signature/{userId}/templates/{templateGuid}?name={name}",
       "operations": [
         {
@@ -3774,10 +3795,72 @@
           ]
         }
       ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeGuid}/documents/{documentGuid}/recipient/{recipientGuid}/fields/{fieldGuid}/locations/{locationGuid}?order={order}",
+      "operations": [
+        {
+          "nickname": "ModifySignatureEnvelopeFieldLocationOrder",
+          "summary": "Modify signature envelope field location",
+          "responseClass": "SignatureEnvelopeFieldResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeGuid",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentGuid",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientGuid",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldGuid",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "locationGuid",
+              "description": "Field location GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "order",
+              "description": "Location order",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
     }
   ],
   "models": {
-    "SignatureTemplateRecipientResponse": {
+ "SignatureTemplateRecipientResponse": {
       "id": "SignatureTemplateRecipientResponse",
       "properties": {
         "result": {
@@ -3794,7 +3877,7 @@
         }
       }
     },
-    "SignatureTemplateRecipientResult": {
+"SignatureTemplateRecipientResult": {
       "id": "SignatureTemplateRecipientResult",
       "properties": {
         "templateId": {
@@ -3805,6 +3888,7 @@
         }
       }
     },
+   
     "SignatureTemplateRecipientInfo": {
       "id": "SignatureTemplateRecipientInfo",
       "properties": {
@@ -3822,7 +3906,7 @@
         }
       }
     },
-    "SignatureTemplateRecipientsResponse": {
+  "SignatureTemplateRecipientsResponse": {
       "id": "SignatureTemplateRecipientsResponse",
       "properties": {
         "result": {
@@ -3839,7 +3923,7 @@
         }
       }
     },
-    "SignatureTemplateRecipientsResult": {
+  "SignatureTemplateRecipientsResult": {
       "id": "SignatureTemplateRecipientsResult",
       "properties": {
         "templateId": {
@@ -3853,7 +3937,7 @@
         }
       }
     },
-    "SignatureStatusResponse": {
+     "SignatureStatusResponse": {
       "id": "SignatureStatusResponse",
       "properties": {
         "result": {
@@ -4043,6 +4127,12 @@
         },
         "guidanceText": {
           "type": "string"
+        },
+        "groupName": {
+          "type": "string"
+        },
+        "settings": {
+          "type": "string"
         }
       }
     },
@@ -4109,12 +4199,15 @@
           "type": "int"
         },
         "page": {
+          "required": true,
           "type": "int"
         },
         "locationX": {
+          "required": true,
           "type": "double"
         },
         "locationY": {
+          "required": true,
           "type": "double"
         },
         "locationHeight": {
@@ -4161,6 +4254,21 @@
         },
         "guidanceText": {
           "type": "string"
+        },
+        "groupName": {
+          "type": "string"
+        },
+        "fieldType": {
+          "type": "int"
+        },
+        "settings": {
+          "type": "string"
+        },
+        "pageWidth": {
+          "type": "int"
+        },
+        "pageHeight": {
+          "type": "int"
         }
       }
     },
@@ -4179,18 +4287,23 @@
       "id": "SignatureTemplateFieldLocationSettingsInfo",
       "properties": {
         "page": {
+          "required": true,
           "type": "int"
         },
         "locationX": {
+          "required": true,
           "type": "double"
         },
         "locationY": {
+          "required": true,
           "type": "double"
         },
         "locationWidth": {
+          "required": true,
           "type": "double"
         },
         "locationHeight": {
+          "required": true,
           "type": "double"
         },
         "fontName": {
@@ -4215,6 +4328,12 @@
           "type": "boolean"
         },
         "align": {
+          "type": "int"
+        },
+        "pageWidth": {
+          "type": "int"
+        },
+        "pageHeight": {
           "type": "int"
         }
       }
@@ -4250,7 +4369,7 @@
         }
       }
     },
-    "SignatureTemplateResponse": {
+ "SignatureTemplateResponse": {
       "id": "SignatureTemplateResponse",
       "properties": {
         "result": {
@@ -4275,7 +4394,7 @@
         }
       }
     },
-    "SignatureTemplateInfo": {
+ "SignatureTemplateInfo": {
       "id": "SignatureTemplateInfo",
       "properties": {
         "id": {
@@ -4365,7 +4484,7 @@
         }
       }
     },
-    "SignatureContactsResponse": {
+ "SignatureContactsResponse": {
       "id": "SignatureContactsResponse",
       "properties": {
         "result": {
@@ -4382,7 +4501,7 @@
         }
       }
     },
-    "SignatureContactsResult": {
+ "SignatureContactsResult": {
       "id": "SignatureContactsResult",
       "properties": {
         "count": {
@@ -4396,7 +4515,7 @@
         }
       }
     },
-    "SignatureContactInfo": {
+ "SignatureContactInfo": {
       "id": "SignatureContactInfo",
       "properties": {
         "id": {
@@ -4416,7 +4535,7 @@
         }
       }
     },
-    "SignatureContactResponse": {
+ "SignatureContactResponse": {
       "id": "SignatureContactResponse",
       "properties": {
         "result": {
@@ -4433,7 +4552,7 @@
         }
       }
     },
-    "SignatureContactResult": {
+"SignatureContactResult": {
       "id": "SignatureContactResult",
       "properties": {
         "contact": {
@@ -4441,21 +4560,24 @@
         }
       }
     },
-    "SignatureContactSettingsInfo": {
+"SignatureContactSettingsInfo": {
       "id": "SignatureContactSettingsInfo",
       "properties": {
         "firstName": {
+          "required": true,
           "type": "string"
         },
         "lastName": {
+          "required": true,
           "type": "string"
         },
         "email": {
+          "required": true,
           "type": "string"
         }
       }
     },
-    "SignatureContactsImportResponse": {
+"SignatureContactsImportResponse": {
       "id": "SignatureContactsImportResponse",
       "properties": {
         "result": {
@@ -4472,7 +4594,7 @@
         }
       }
     },
-    "SignatureContactsImportResult": {
+ "SignatureContactsImportResult": {
       "id": "SignatureContactsImportResult",
       "properties": {
         "imported": {
@@ -4483,7 +4605,7 @@
         }
       }
     },
-    "SignatureContactIntegrationSettings": {
+ "SignatureContactIntegrationSettings": {
       "id": "SignatureContactIntegrationSettings",
       "properties": {
         "provider": {
@@ -4552,9 +4674,11 @@
       "id": "SignatureSignDocumentDocumentSettingsInfo",
       "properties": {
         "name": {
+          "required": true,
           "type": "string"
         },
         "data": {
+          "required": true,
           "type": "string"
         }
       }
@@ -4563,21 +4687,27 @@
       "id": "SignatureSignDocumentSignerSettingsInfo",
       "properties": {
         "name": {
+          "required": true,
           "type": "string"
         },
         "top": {
+          "required": true,
           "type": "double"
         },
         "left": {
+          "required": true,
           "type": "double"
         },
         "width": {
+          "required": true,
           "type": "double"
         },
         "height": {
+          "required": true,
           "type": "double"
         },
         "placeSignatureOn": {
+          "required": true,
           "type": "string"
         },
         "data": {
@@ -4630,7 +4760,7 @@
         }
       }
     },
-    "SignatureEnvelopeAuditLogsResponse": {
+"SignatureEnvelopeAuditLogsResponse": {
       "id": "SignatureEnvelopeAuditLogsResponse",
       "properties": {
         "result": {
@@ -4647,7 +4777,7 @@
         }
       }
     },
-    "SignatureEnvelopeAuditLogsResult": {
+ "SignatureEnvelopeAuditLogsResult": {
       "id": "SignatureEnvelopeAuditLogsResult",
       "properties": {
         "envelopeId": {
@@ -4661,7 +4791,7 @@
         }
       }
     },
-    "SignatureEnvelopeAuditLogInfo": {
+ "SignatureEnvelopeAuditLogInfo": {
       "id": "SignatureEnvelopeAuditLogInfo",
       "properties": {
         "id": {
@@ -4687,7 +4817,7 @@
         }
       }
     },
-    "SignatureEnvelopeResponse": {
+ "SignatureEnvelopeResponse": {
       "id": "SignatureEnvelopeResponse",
       "properties": {
         "result": {
@@ -4704,7 +4834,7 @@
         }
       }
     },
-    "SignatureEnvelopeResult": {
+ "SignatureEnvelopeResult": {
       "id": "SignatureEnvelopeResult",
       "properties": {
         "envelope": {
@@ -4712,7 +4842,7 @@
         }
       }
     },
-    "SignatureEnvelopeInfo": {
+"SignatureEnvelopeInfo": {
       "id": "SignatureEnvelopeInfo",
       "properties": {
         "id": {
@@ -4792,7 +4922,7 @@
         }
       }
     },
-    "SignatureEnvelopeRecipientInfo": {
+"SignatureEnvelopeRecipientInfo": {
       "id": "SignatureEnvelopeRecipientInfo",
       "properties": {
         "id": {
@@ -4845,7 +4975,7 @@
         }
       }
     },
-    "SignatureEnvelopeSettingsInfo": {
+"SignatureEnvelopeSettingsInfo": {
       "id": "SignatureEnvelopeSettingsInfo",
       "properties": {
         "ownerShouldSign": {
@@ -4892,7 +5022,7 @@
         }
       }
     },
-    "SignatureEnvelopeDocumentResponse": {
+"SignatureEnvelopeDocumentResponse": {
       "id": "SignatureEnvelopeDocumentResponse",
       "properties": {
         "result": {
@@ -4909,7 +5039,7 @@
         }
       }
     },
-    "SignatureEnvelopeDocumentResult": {
+"SignatureEnvelopeDocumentResult": {
       "id": "SignatureEnvelopeDocumentResult",
       "properties": {
         "envelopeId": {
@@ -4920,7 +5050,7 @@
         }
       }
     },
-    "SignatureEnvelopeDocumentInfo": {
+ "SignatureEnvelopeDocumentInfo": {
       "id": "SignatureEnvelopeDocumentInfo",
       "properties": {
         "documentId": {
@@ -4958,7 +5088,7 @@
         }
       }
     },
-    "SignatureDocumentFieldInfo": {
+ "SignatureDocumentFieldInfo": {
       "id": "SignatureDocumentFieldInfo",
       "properties": {
         "id": {
@@ -4993,7 +5123,7 @@
         }
       }
     },
-    "SignatureDocumentFieldLocationInfo": {
+"SignatureDocumentFieldLocationInfo": {
       "id": "SignatureDocumentFieldLocationInfo",
       "properties": {
         "id": {
@@ -5028,7 +5158,7 @@
         }
       }
     },
-    "SignatureEnvelopeDocumentsResponse": {
+  "SignatureEnvelopeDocumentsResponse": {
       "id": "SignatureEnvelopeDocumentsResponse",
       "properties": {
         "result": {
@@ -5045,7 +5175,7 @@
         }
       }
     },
-    "SignatureEnvelopeDocumentsResult": {
+ "SignatureEnvelopeDocumentsResult": {
       "id": "SignatureEnvelopeDocumentsResult",
       "properties": {
         "envelopeId": {
@@ -5059,7 +5189,7 @@
         }
       }
     },
-    "SignatureEnvelopeFieldsResponse": {
+ "SignatureEnvelopeFieldsResponse": {
       "id": "SignatureEnvelopeFieldsResponse",
       "properties": {
         "result": {
@@ -5076,7 +5206,7 @@
         }
       }
     },
-    "SignatureEnvelopeFieldsResult": {
+ "SignatureEnvelopeFieldsResult": {
       "id": "SignatureEnvelopeFieldsResult",
       "properties": {
         "envelopeId": {
@@ -5090,7 +5220,7 @@
         }
       }
     },
-    "SignatureEnvelopeFieldInfo": {
+"SignatureEnvelopeFieldInfo": {
       "id": "SignatureEnvelopeFieldInfo",
       "properties": {
         "id": {
@@ -5149,10 +5279,16 @@
         },
         "guidanceText": {
           "type": "string"
+        },
+        "groupName": {
+          "type": "string"
+        },
+        "settings": {
+          "type": "string"
         }
       }
     },
-    "SignatureEnvelopeFieldLocationInfo": {
+"SignatureEnvelopeFieldLocationInfo": {
       "id": "SignatureEnvelopeFieldLocationInfo",
       "properties": {
         "id": {
@@ -5199,10 +5335,13 @@
         },
         "align": {
           "type": "int"
+        },
+        "order": {
+          "type": "int"
         }
       }
     },
-    "SignatureEnvelopeFieldSettingsInfo": {
+"SignatureEnvelopeFieldSettingsInfo": {
       "id": "SignatureEnvelopeFieldSettingsInfo",
       "properties": {
         "name": {
@@ -5215,9 +5354,11 @@
           "type": "int"
         },
         "page": {
+          "required": true,
           "type": "int"
         },
         "locationX": {
+          "required": true,
           "type": "double"
         },
         "locationY": {
@@ -5267,6 +5408,21 @@
         },
         "guidanceText": {
           "type": "string"
+        },
+        "groupName": {
+          "type": "string"
+        },
+        "fieldType": {
+          "type": "int"
+        },
+        "settings": {
+          "type": "string"
+        },
+        "pageWidth": {
+          "type": "int"
+        },
+        "pageHeight": {
+          "type": "int"
         }
       }
     },
@@ -5287,7 +5443,7 @@
         }
       }
     },
-    "SignatureEnvelopeFieldResult": {
+ "SignatureEnvelopeFieldResult": {
       "id": "SignatureEnvelopeFieldResult",
       "properties": {
         "envelopeId": {
@@ -5304,7 +5460,7 @@
         }
       }
     },
-    "SignatureEnvelopeAssignFieldSettingsInfo": {
+ "SignatureEnvelopeAssignFieldSettingsInfo": {
       "id": "SignatureEnvelopeAssignFieldSettingsInfo",
       "properties": {
         "currentRecipientId": {
@@ -5315,22 +5471,27 @@
         }
       }
     },
-    "SignatureEnvelopeFieldLocationSettingsInfo": {
+ "SignatureEnvelopeFieldLocationSettingsInfo": {
       "id": "SignatureEnvelopeFieldLocationSettingsInfo",
       "properties": {
         "page": {
+          "required": true,
           "type": "int"
         },
         "locationX": {
+          "required": true,
           "type": "double"
         },
         "locationY": {
+          "required": true,
           "type": "double"
         },
         "locationWidth": {
+          "required": true,
           "type": "double"
         },
         "locationHeight": {
+          "required": true,
           "type": "double"
         },
         "fontName": {
@@ -5356,10 +5517,16 @@
         },
         "align": {
           "type": "int"
+        },
+        "pageWidth": {
+          "type": "int"
+        },
+        "pageHeight": {
+          "type": "int"
         }
       }
     },
-    "SignatureEnvelopeRecipientResponse": {
+ "SignatureEnvelopeRecipientResponse": {
       "id": "SignatureEnvelopeRecipientResponse",
       "properties": {
         "result": {
@@ -5376,7 +5543,7 @@
         }
       }
     },
-    "SignatureEnvelopeRecipientResult": {
+"SignatureEnvelopeRecipientResult": {
       "id": "SignatureEnvelopeRecipientResult",
       "properties": {
         "envelopeId": {
@@ -5387,7 +5554,7 @@
         }
       }
     },
-    "SignatureEnvelopeRecipientsResponse": {
+"SignatureEnvelopeRecipientsResponse": {
       "id": "SignatureEnvelopeRecipientsResponse",
       "properties": {
         "result": {
@@ -5404,7 +5571,7 @@
         }
       }
     },
-    "SignatureEnvelopeRecipientsResult": {
+ "SignatureEnvelopeRecipientsResult": {
       "id": "SignatureEnvelopeRecipientsResult",
       "properties": {
         "envelopeId": {
@@ -5418,7 +5585,7 @@
         }
       }
     },
-    "SignatureEnvelopeSendResponse": {
+ "SignatureEnvelopeSendResponse": {
       "id": "SignatureEnvelopeSendResponse",
       "properties": {
         "result": {
@@ -5435,7 +5602,7 @@
         }
       }
     },
-    "SignatureEnvelopeSendResult": {
+"SignatureEnvelopeSendResult": {
       "id": "SignatureEnvelopeSendResult",
       "properties": {
         "recipients": {
@@ -5446,7 +5613,7 @@
         }
       }
     },
-    "WebhookInfo": {
+ "WebhookInfo": {
       "id": "WebhookInfo",
       "properties": {
         "callbackUrl": {
@@ -5454,7 +5621,7 @@
         }
       }
     },
-    "SignatureEnvelopesResponse": {
+ "SignatureEnvelopesResponse": {
       "id": "SignatureEnvelopesResponse",
       "properties": {
         "result": {
@@ -5471,7 +5638,7 @@
         }
       }
     },
-    "SignatureEnvelopesResult": {
+ "SignatureEnvelopesResult": {
       "id": "SignatureEnvelopesResult",
       "properties": {
         "envelopesCount": {
@@ -5485,7 +5652,7 @@
         }
       }
     },
-    "SignatureEnvelopeResourcesResponse": {
+ "SignatureEnvelopeResourcesResponse": {
       "id": "SignatureEnvelopeResourcesResponse",
       "properties": {
         "result": {
@@ -5502,7 +5669,7 @@
         }
       }
     },
-    "SignatureEnvelopeResourcesResult": {
+  "SignatureEnvelopeResourcesResult": {
       "id": "SignatureEnvelopeResourcesResult",
       "properties": {
         "documents": {
@@ -5525,7 +5692,7 @@
         }
       }
     },
-    "SignatureFieldsResponse": {
+ "SignatureFieldsResponse": {
       "id": "SignatureFieldsResponse",
       "properties": {
         "result": {
@@ -5542,7 +5709,7 @@
         }
       }
     },
-    "SignatureFieldsResult": {
+ "SignatureFieldsResult": {
       "id": "SignatureFieldsResult",
       "properties": {
         "count": {
@@ -5556,7 +5723,7 @@
         }
       }
     },
-    "SignatureFieldInfo": {
+"SignatureFieldInfo": {
       "id": "SignatureFieldInfo",
       "properties": {
         "id": {
@@ -5618,7 +5785,7 @@
         }
       }
     },
-    "SignatureFieldResponse": {
+"SignatureFieldResponse": {
       "id": "SignatureFieldResponse",
       "properties": {
         "result": {
@@ -5635,7 +5802,7 @@
         }
       }
     },
-    "SignatureFieldResult": {
+"SignatureFieldResult": {
       "id": "SignatureFieldResult",
       "properties": {
         "field": {
@@ -5643,10 +5810,11 @@
         }
       }
     },
-    "SignatureFieldSettingsInfo": {
+"SignatureFieldSettingsInfo": {
       "id": "SignatureFieldSettingsInfo",
       "properties": {
         "name": {
+          "required": true,
           "type": "string"
         },
         "graphSizeW": {
@@ -5744,6 +5912,9 @@
         },
         "attachSignedDocument": {
           "type": "boolean"
+        },
+        "notifyOtherOnSign": {
+          "type": "string"
         }
       }
     },
@@ -5770,6 +5941,9 @@
         },
         "attachSignedDocument": {
           "type": "boolean"
+        },
+        "notifyOtherOnSign ": {
+          "type": "string"
         }
       }
     },
@@ -5945,6 +6119,12 @@
         },
         "guidanceText": {
           "type": "string"
+        },
+        "groupName": {
+          "type": "string"
+        },
+        "settings": {
+          "type": "string"
         }
       }
     },
@@ -5995,6 +6175,9 @@
         },
         "align": {
           "type": "int"
+        },
+        "order": {
+          "type": "int"
         }
       }
     },
@@ -6011,12 +6194,15 @@
           "type": "int"
         },
         "page": {
+          "required": true,
           "type": "int"
         },
         "locationX": {
+          "required": true,
           "type": "double"
         },
         "locationY": {
+          "required": true,
           "type": "double"
         },
         "locationWidth": {
@@ -6063,6 +6249,21 @@
         },
         "guidanceText": {
           "type": "string"
+        },
+        "groupName": {
+          "type": "string"
+        },
+        "fieldType": {
+          "type": "int"
+        },
+        "settings": {
+          "type": "string"
+        },
+        "pageWidth": {
+          "type": "int"
+        },
+        "pageHeight": {
+          "type": "int"
         }
       }
     },
@@ -6070,18 +6271,23 @@
       "id": "SignatureFormFieldLocationSettingsInfo",
       "properties": {
         "page": {
+          "required": true,
           "type": "int"
         },
         "locationX": {
+          "required": true,
           "type": "double"
         },
         "locationY": {
+          "required": true,
           "type": "double"
         },
         "locationWidth": {
+          "required": true,
           "type": "double"
         },
         "locationHeight": {
+          "required": true,
           "type": "double"
         },
         "fontName": {
@@ -6106,6 +6312,12 @@
           "type": "boolean"
         },
         "align": {
+          "type": "int"
+        },
+        "pageWidth": {
+          "type": "int"
+        },
+        "pageHeight": {
           "type": "int"
         }
       }
@@ -6141,6 +6353,7 @@
         }
       }
     },
+   
     "SignatureFormsResponse": {
       "id": "SignatureFormsResponse",
       "properties": {
@@ -6217,7 +6430,7 @@
         }
       }
     },
-    "SignaturePredefinedListsResponse": {
+ "SignaturePredefinedListsResponse": {
       "id": "SignaturePredefinedListsResponse",
       "properties": {
         "result": {
@@ -6234,7 +6447,7 @@
         }
       }
     },
-    "SignaturePredefinedListsResult": {
+"SignaturePredefinedListsResult": {
       "id": "SignaturePredefinedListsResult",
       "properties": {
         "lists": {
@@ -6245,7 +6458,7 @@
         }
       }
     },
-    "SignaturePredefinedListInfo": {
+ "SignaturePredefinedListInfo": {
       "id": "SignaturePredefinedListInfo",
       "properties": {
         "id": {
@@ -6262,7 +6475,7 @@
         }
       }
     },
-    "SignaturePredefinedListResponse": {
+ "SignaturePredefinedListResponse": {
       "id": "SignaturePredefinedListResponse",
       "properties": {
         "result": {
@@ -6279,7 +6492,7 @@
         }
       }
     },
-    "SignaturePredefinedListResult": {
+  "SignaturePredefinedListResult": {
       "id": "SignaturePredefinedListResult",
       "properties": {
         "list": {
@@ -6287,21 +6500,24 @@
         }
       }
     },
-    "SignaturePredefinedListSettingsInfo": {
+"SignaturePredefinedListSettingsInfo": {
       "id": "SignaturePredefinedListSettingsInfo",
       "properties": {
         "name": {
+          "required": true,
           "type": "string"
         },
         "values": {
+          "required": true,
           "type": "string"
         },
         "defaultValue": {
+          "required": false,
           "type": "string"
         }
-      }
-    },
-    "SignatureRolesResponse": {
+       }
+      },
+     "SignatureRolesResponse": {
       "id": "SignatureRolesResponse",
       "properties": {
         "result": {
@@ -6355,7 +6571,7 @@
         }
       }
     },
-    "SignatureSignatureResponse": {
+     "SignatureSignatureResponse": {
       "id": "SignatureSignatureResponse",
       "properties": {
         "result": {
@@ -6443,9 +6659,11 @@
           "type": "string"
         },
         "firstName": {
+          "required": true,
           "type": "string"
         },
         "lastName": {
+          "required": true,
           "type": "string"
         },
         "textInitials": {
@@ -6521,7 +6739,7 @@
         }
       }
     },
-    "SignatureTemplateSettingsInfo": {
+  "SignatureTemplateSettingsInfo": {
       "id": "SignatureTemplateSettingsInfo",
       "properties": {
         "ownerShouldSign": {

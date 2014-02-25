@@ -1,7 +1,7 @@
 {
-  "basePath": "https://api.groupdocs.com/v2.0",
+  "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.12.37.7924",
+  "apiVersion": "2.12",
   "resourcePath": "/async",
   "apis": [
     {
@@ -318,7 +318,7 @@
       ]
     },
     {
-      "path": "/async/{userId}/jobs?page={pageIndex}&count={pageSize}&date={date}&statusIds={statusIds}&actions={actions}&excluded_actions={excludedActions}",
+      "path": "/async/{userId}/jobs?page={pageIndex}&count={pageSize}&date={date}&statusIds={statusIds}&actions={actions}&excluded_actions={excludedActions}&jobName={jobName}",
       "operations": [
         {
           "nickname": "GetJobs",
@@ -371,6 +371,13 @@
             {
               "name": "excludedActions",
               "description": "Excluded actions",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "jobName",
+              "description": "Foltred job name",
               "dataType": "string",
               "required": false,
               "paramType": "query"
@@ -617,7 +624,8 @@
           "type": "List",
           "items": {
             "type": "string"
-          }
+          },
+          "required": false
         },
         "name": {
           "type": "string"

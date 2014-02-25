@@ -8,7 +8,7 @@ import urllib2
 spec_host = 'http://stage-api-groupdocs.dynabic.com/v2.0/spec/spec-files/'
 local_dir = 'E:\\rabota\\GroupDocs\\GitHub\\specs\\downloaded-specs\\'
 file_names = [
-	'annotation.json',
+	
 	'async.json',
 	'comparison.json',
 	'comparisonPublic.json',
@@ -17,7 +17,7 @@ file_names = [
 	'post.json',
 	'resources.json',
 	'shared.json',
-	'signature.json',
+	
 	'signaturePublic.json',
 	'storage.json',
 	'system.json',
