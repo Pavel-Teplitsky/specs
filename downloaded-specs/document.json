@@ -1,7 +1,7 @@
 {
-  "basePath": "https://api.groupdocs.com/v2.0",
+  "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.12.37.7924",
+  "apiVersion": "2.12",
   "resourcePath": "/doc",
   "apis": [
     {
@@ -173,7 +173,7 @@
             },
             {
               "name": "fileId",
-              "description": "File GUID",
+              "description": "File ID - decimal type",
               "dataType": "string",
               "required": true,
               "paramType": "path"
@@ -1042,6 +1042,33 @@
           ]
         }
       ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/hyperlinks",
+      "operations": [
+        {
+          "nickname": "GetDocumentHyperlinks",
+          "summary": "Returns document hyperlinks.",
+          "responseClass": "GetHyperlinksResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "GroupDocs user global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "Document global unique identifier.",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
     }
   ],
   "models": {
@@ -1099,6 +1126,15 @@
           "type": "string"
         },
         "password": {
+          "type": "string"
+        },
+        "lic": {
+          "type": "boolean"
+        },
+        "pdfPrintUrl": {
+          "type": "string"
+        },
+        "htmlPrintUrl": {
           "type": "string"
         },
         "id": {
@@ -1285,6 +1321,9 @@
         "support_email": {
           "type": "string"
         },
+        "apps": {
+          "type": "string"
+        },
         "annotation_branded": {
           "type": "boolean"
         },
@@ -1441,8 +1480,11 @@
         "signature_color": {
           "type": "string"
         },
+        "signature_save_field_changes_automatically": {
+          "type": "boolean"
+        },
         "id": {
-          "type": "double"
+          "type": "long"
         },
         "guid": {
           "type": "string"
@@ -1794,6 +1836,21 @@
         },
         "rect": {
           "type": "Rectangle"
+        },
+        "maxlength": {
+          "type": "int"
+        },
+        "mandatory": {
+          "type": "boolean"
+        },
+        "fieldtype": {
+          "type": "string"
+        },
+        "acceptableValues": {
+          "type": "List",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -2029,6 +2086,54 @@
       "properties": {
         "content": {
           "type": "string"
+        }
+      }
+    },
+    "GetHyperlinksResponse": {
+      "id": "GetHyperlinksResponse",
+      "properties": {
+        "result": {
+          "type": "GetHyperlinksResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "GetHyperlinksResult": {
+      "id": "GetHyperlinksResult",
+      "properties": {
+        "document_id": {
+          "type": "double"
+        },
+        "links": {
+          "type": "List",
+          "items": {
+            "$ref": "DocumentHyperlink"
+          }
+        }
+      }
+    },
+    "DocumentHyperlink": {
+      "id": "DocumentHyperlink",
+      "properties": {
+        "page": {
+          "type": "int"
+        },
+        "toPage": {
+          "type": "int"
+        },
+        "url": {
+          "type": "string"
+        },
+        "rect": {
+          "type": "Rectangle"
         }
       }
     }

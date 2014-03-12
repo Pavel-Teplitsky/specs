@@ -1,7 +1,7 @@
 {
-  "basePath": "https://api.groupdocs.com/v2.0",
+  "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.12.37.7924",
+  "apiVersion": "2.12",
   "resourcePath": "/ant",
   "apis": [
     {
@@ -530,9 +530,9 @@
               "paramType": "path"
             },
             {
-              "name": "position",
-              "description": "position",
-              "dataType": "Point",
+              "name": "marker",
+              "description": "Annotation marker position",
+              "dataType": "MarkerPosition",
               "required": true,
               "paramType": "body"
             }
@@ -627,7 +627,7 @@
             {
               "name": "sharedLinkAccessRights",
               "description": "Access Rights for the collaborate link",
-              "dataType": "int",
+              "dataType": "string",
               "required": true,
               "paramType": "body"
             }
@@ -756,11 +756,46 @@
         }
       }
     },
+	"AnnotationReviewerRights": {
+      "id": "AnnotationReviewerRights",
+      "properties": {
+        "CanView": {
+          "type": "int",
+    "value": 1
+   
+        },
+        "CanAnnotate": {
+          "type": "int",
+    "value": 2
+          
+        },
+  "CanDownload": {
+   "type": "int",
+    "value": 4
+          
+  },
+  "CanExport": {
+   "type": "int",
+    "value": 8
+          
+  },
+  "CanDelete": {
+   "type": "int",
+    "value": 16
+          
+  },
+  "All": {
+   "type": "int",
+   "value": 31
+   
+  }
+      }
+    },
     "CreateAnnotationResult": {
       "id": "CreateAnnotationResult",
       "properties": {
         "id": {
-          "type": "double"
+          "type": "long"
         },
         "annotationGuid": {
           "type": "string"
@@ -800,6 +835,9 @@
         "box": {
           "type": "Rectangle"
         },
+        "pageNumber": {
+          "type": "int"
+        },
         "annotationPosition": {
           "type": "Point"
         },
@@ -810,6 +848,7 @@
           "type": "string"
         },
         "type": {
+          "required": false,
           "type": "string",
           "enum": [
             0,
@@ -906,6 +945,9 @@
         },
         "parentReplyGuid": {
           "type": "string"
+        },
+        "isAvatarExist": {
+          "type": "boolean"
         }
       }
     },
@@ -1057,6 +1099,9 @@
           "items": {
             "$ref": "AnnotationReplyInfo"
           }
+        },
+        "serverTime": {
+          "type": "long"
         }
       }
     },
@@ -1147,13 +1192,19 @@
           "type": "string"
         },
         "access_rights": {
-          "type": "int"
+          "type": "string"
         },
         "color": {
           "type": "int"
         },
         "customEmailMessage": {
           "type": "string"
+        },
+        "avatar": {
+          "type": "List",
+          "items": {
+            "type": "int"
+          }
         }
       }
     },
@@ -1338,6 +1389,17 @@
         }
       }
     },
+    "MarkerPosition": {
+      "id": "MarkerPosition",
+      "properties": {
+        "position": {
+          "type": "Point"
+        },
+        "page": {
+          "type": "int"
+        }
+      }
+    },
     "SetReviewerRightsResponse": {
       "id": "SetReviewerRightsResponse",
       "properties": {
@@ -1380,7 +1442,7 @@
       "id": "GetSharedLinkAccessRightsResult",
       "properties": {
         "accessRights": {
-          "type": "int"
+          "type": "string"
         }
       }
     },

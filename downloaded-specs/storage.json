@@ -1,9 +1,43 @@
 {
-  "basePath": "https://api.groupdocs.com/v2.0",
+  "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.12.37.7924",
+  "apiVersion": "2.12",
   "resourcePath": "/storage",
   "apis": [
+    {
+      "path": "/storage/{userId}/cancelUpload/{fileId}/{filePath}",
+      "operations": [
+        {
+          "nickname": "CancelFileUpload",
+          "summary": "Cancel file upload",
+          "responseClass": "CancelFileUploadResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "file Id",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "filePath",
+              "description": "File path",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
     {
       "path": "/storage/{userId}",
       "operations": [
@@ -569,7 +603,7 @@
         {
           "nickname": "MoveToTrash",
           "summary": "Move to trash",
-          "responseClass": "FolderMoveResponse",
+          "responseClass": "DeleteResponse",
           "httpMethod": "PUT",
           "parameters": [
             {
@@ -619,6 +653,27 @@
     }
   ],
   "models": {
+    "CancelFileUploadResponse": {
+      "id": "CancelFileUploadResponse",
+      "properties": {
+        "result": {
+          "type": "CancelFileUploadResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "CancelFileUploadResult": {
+      "id": "CancelFileUploadResult",
+      "properties": {}
+    },
     "StorageInfoResponse": {
       "id": "StorageInfoResponse",
       "properties": {
@@ -655,6 +710,9 @@
           "type": "int"
         },
         "avail_documents": {
+          "type": "long"
+        },
+        "maxViewingFileSize": {
           "type": "long"
         }
       }
@@ -789,6 +847,9 @@
           "type": "boolean"
         },
         "support_email": {
+          "type": "string"
+        },
+        "apps": {
           "type": "string"
         },
         "annotation_branded": {
@@ -947,8 +1008,11 @@
         "signature_color": {
           "type": "string"
         },
+        "signature_save_field_changes_automatically": {
+          "type": "boolean"
+        },
         "id": {
-          "type": "double"
+          "type": "long"
         },
         "guid": {
           "type": "string"
@@ -988,7 +1052,8 @@
           "type": "long"
         },
         "thumbnail": {
-          "type": "string"
+          "type": "string",
+          "required": false
         },
         "supported_types": {
           "type": "List",
@@ -1070,7 +1135,8 @@
           "type": "double"
         },
         "thumbnail": {
-          "type": "string"
+          "type": "string",
+          "required": false
         },
         "upload_time": {
           "type": "long"

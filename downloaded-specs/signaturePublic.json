@@ -1,7 +1,7 @@
 {
-  "basePath": "https://api.groupdocs.com/v2.0",
+  "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.12.37.7924",
+  "apiVersion": "2.12",
   "resourcePath": "/signature/public",
   "apis": [
     {
@@ -44,7 +44,7 @@
             {
               "name": "postData",
               "description": "Data to be placed in field",
-              "dataType": "string",
+              "dataType": "stream",
               "required": false,
               "paramType": "body"
             }
@@ -274,7 +274,7 @@
             {
               "name": "postData",
               "description": "Data to be placed in field",
-              "dataType": "string",
+              "dataType": "stream",
               "required": false,
               "paramType": "body"
             },
@@ -290,7 +290,7 @@
       ]
     },
     {
-      "path": "/signature/public/forms/{formGuid}/participant/{participantGuid}/sign?participantAuthSignature={authSignature}",
+      "path": "/signature/public/forms/{formGuid}/participant/{participantGuid}/sign?name={participantName}&participantAuthSignature={authSignature}",
       "operations": [
         {
           "nickname": "PublicSignForm",
@@ -311,6 +311,13 @@
               "dataType": "string",
               "required": true,
               "paramType": "path"
+            },
+            {
+              "name": "participantName",
+              "description": "Participant Name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
             },
             {
               "name": "authSignature",
@@ -667,6 +674,12 @@
         },
         "guidanceText": {
           "type": "string"
+        },
+        "groupName": {
+          "type": "string"
+        },
+        "settings": {
+          "type": "string"
         }
       }
     },
@@ -716,6 +729,9 @@
           "type": "boolean"
         },
         "align": {
+          "type": "int"
+        },
+        "order": {
           "type": "int"
         }
       }
@@ -1229,6 +1245,12 @@
         },
         "guidanceText": {
           "type": "string"
+        },
+        "groupName": {
+          "type": "string"
+        },
+        "settings": {
+          "type": "string"
         }
       }
     },
@@ -1278,6 +1300,9 @@
           "type": "boolean"
         },
         "align": {
+          "type": "int"
+        },
+        "order": {
           "type": "int"
         }
       }
@@ -1363,6 +1388,9 @@
         },
         "attachSignedDocument": {
           "type": "boolean"
+        },
+        "notifyOtherOnSign": {
+          "type": "string"
         }
       }
     },
@@ -1492,21 +1520,27 @@
           "type": "string"
         },
         "name": {
+          "required": true,
           "type": "string"
         },
         "top": {
+          "required": true,
           "type": "double"
         },
         "left": {
+          "required": true,
           "type": "double"
         },
         "width": {
+          "required": true,
           "type": "double"
         },
         "height": {
+          "required": true,
           "type": "double"
         },
         "placeSignatureOn": {
+          "required": true,
           "type": "string"
         },
         "data": {
