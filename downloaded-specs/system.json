@@ -1,5 +1,5 @@
 {
-  "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0",
+  "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
   "apiVersion": "2.12",
   "resourcePath": "/system",
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "path": "/system/{callerId}/plans/{family}?invalidate={invalidate}",
+      "path": "/system/{callerId}/plans/{family}",
       "operations": [
         {
           "nickname": "GetSubscriptionPlans",

@@ -1,5 +1,5 @@
 {
-  "basePath": "https://stage-api-groupdocs.dynabic.com/v2.0/spec",
+  "basePath": "https://api.groupdocs.com/v2.0/spec",
   "swaggerVersion": "1.1",
   "apiVersion": "2.12",
   "apis": [
@@ -17,9 +17,6 @@
     },
     {
       "path": "/document.{format}"
-    },
-    {
-      "path": "/admin.{format}"
     },
     {
       "path": "/user.{format}"
