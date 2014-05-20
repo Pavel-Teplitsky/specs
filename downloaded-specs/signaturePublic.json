@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.12",
+  "apiVersion": "2.19.7.9582",
   "resourcePath": "/signature/public",
   "apis": [
     {
@@ -572,6 +572,26 @@
               "name": "fieldGuid",
               "description": "Field GUID",
               "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/email-template/{templateType}/default",
+      "operations": [
+        {
+          "nickname": "PublicGetDefaultEmailTemplate",
+          "summary": "Get default email template",
+          "responseClass": "stream",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "templateType",
+              "description": "Template type",
+              "dataType": "int",
               "required": true,
               "paramType": "path"
             }
@@ -1391,6 +1411,9 @@
         },
         "notifyOtherOnSign": {
           "type": "string"
+        },
+        "canParticipantPrintForm": {
+          "type": "boolean"
         }
       }
     },

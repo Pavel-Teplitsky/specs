@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.12",
+  "apiVersion": "2.19.7.9582",
   "resourcePath": "/merge",
   "apis": [
     {
@@ -1547,6 +1547,40 @@
           ]
         }
       ]
+    },
+    {
+      "path": "/merge/{userId}/files/{fileId}/templates",
+      "operations": [
+        {
+          "nickname": "CreateQuestionnaireTemplate",
+          "summary": "Create questionnaire template from file",
+          "responseClass": "CreateQuestionnaireTemplateResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fields",
+              "description": "Array of template fields",
+              "dataType": "List[TemplateField]",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
     }
   ],
   "models": {
@@ -1612,6 +1646,26 @@
       "properties": {
         "result": {
           "type": "MergeTemplateResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+	"CreateQuestionnaireTemplateResponse": {
+      "id": "CreateQuestionnaireTemplateResponse",
+      "properties": {
+        "result": {
+           "type": "List",
+          "items": {
+            "$ref": "TemplateField"
+          }
         },
         "status": {
           "type": "string"
@@ -1874,6 +1928,9 @@
           "items": {
             "$ref": "QuestionnaireInfo"
           }
+        },
+        "totalCount": {
+          "type": "int"
         }
       }
     },
@@ -2020,6 +2077,9 @@
           "items": {
             "$ref": "QuestionnaireInfo"
           }
+        },
+        "totalCount": {
+          "type": "int"
         }
       }
     },
@@ -2742,6 +2802,9 @@
         },
         "fileType": {
           "type": "string"
+        },
+        "dependent_questionnaires_count": {
+          "type": "int"
         },
         "upload_time": {
           "type": "long"

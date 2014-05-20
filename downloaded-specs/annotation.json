@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.12",
+  "apiVersion": "2.19.7.9582",
   "resourcePath": "/ant",
   "apis": [
     {
@@ -84,6 +84,33 @@
             {
               "name": "annotationId",
               "description": "Annotation ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/ant/{userId}/files/{fileId}/annotations",
+      "operations": [
+        {
+          "nickname": "DeleteDocumentAnnotations",
+          "summary": "Delete annotation",
+          "responseClass": "DeleteDocumentAnnotationsReponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File ID",
               "dataType": "string",
               "required": true,
               "paramType": "path"
@@ -596,13 +623,6 @@
               "dataType": "string",
               "required": true,
               "paramType": "path"
-            },
-{
-              "name": "sharedLinkAccessRights",
-              "description": "Access Rights for the collaborate link",
-              "dataType": "AnnotationReviewerRights",
-              "required": true,
-              "paramType": "body"
             }
           ]
         }
@@ -839,6 +859,12 @@
         "creatorGuid": {
           "type": "string"
         },
+        "creatorName": {
+          "type": "string"
+        },
+        "creatorEmail": {
+          "type": "string"
+        },
         "box": {
           "type": "Rectangle"
         },
@@ -864,7 +890,9 @@
             3,
             4,
             5,
-            6
+            6,
+            7,
+            8
           ]
         },
         "access": {
@@ -880,6 +908,15 @@
           "type": "long"
         },
         "fontColor": {
+          "type": "int"
+        },
+        "penColor": {
+          "type": "int"
+        },
+        "penWidth": {
+          "type": "int"
+        },
+        "penStyle": {
           "type": "int"
         },
         "fieldText": {
@@ -942,6 +979,9 @@
           "type": "string"
         },
         "userName": {
+          "type": "string"
+        },
+        "userEmail": {
           "type": "string"
         },
         "text": {
@@ -1014,6 +1054,34 @@
     },
     "DeleteAnnotationResult": {
       "id": "DeleteAnnotationResult",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        }
+      }
+    },
+	 "DeleteDocumentAnnotationsReponse": {
+      "id": "DeleteDocumentAnnotationsReponse",
+      "properties": {
+        "result": {
+          "type": "DeleteDocumentAnnotationsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "DeleteDocumentAnnotationsResult": {
+      "id": "DeleteDocumentAnnotationsResult",
       "properties": {
         "id": {
           "type": "double"

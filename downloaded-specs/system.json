@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.12",
+  "apiVersion": "2.19.7.9582",
   "resourcePath": "/system",
   "apis": [
     {

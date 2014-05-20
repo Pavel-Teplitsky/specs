@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.12",
+  "apiVersion": "2.19.7.9582",
   "resourcePath": "/shared",
   "apis": [
     {
@@ -364,6 +364,42 @@
         },
         "signature_save_field_changes_automatically": {
           "type": "boolean"
+        },
+        "signature_use_custom_email_templates": {
+          "type": "boolean"
+        },
+        "signature_envelope_sent_owner_template": {
+          "type": "string"
+        },
+        "signature_envelope_sent_other_template": {
+          "type": "string"
+        },
+        "signature_envelope_completed_template": {
+          "type": "string"
+        },
+        "signature_envelope_signed_template": {
+          "type": "string"
+        },
+        "signature_envelope_declined_template": {
+          "type": "string"
+        },
+        "signature_envelope_failed_template": {
+          "type": "string"
+        },
+        "signature_envelope_cancelled_template": {
+          "type": "string"
+        },
+        "signature_envelope_expired_template": {
+          "type": "string"
+        },
+        "signature_envelope_step_expired_template": {
+          "type": "string"
+        },
+        "signature_envelope_recipient_reminder_template": {
+          "type": "string"
+        },
+        "signature_form_signed_template": {
+          "type": "string"
         },
         "id": {
           "type": "long"
