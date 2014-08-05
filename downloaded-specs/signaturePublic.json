@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.19.7.9582",
+  "apiVersion": "2.23.1.10192",
   "resourcePath": "/signature/public",
   "apis": [
     {
@@ -74,6 +74,13 @@
               "dataType": "string",
               "required": true,
               "paramType": "path"
+            },
+            {
+              "name": "signatureSignEnvelopeSettingsInfo",
+              "description": "Sign settings",
+              "dataType": "SignatureSignEnvelopeSettingsInfo",
+              "required": false,
+              "paramType": "body"
             }
           ]
         }
@@ -290,7 +297,7 @@
       ]
     },
     {
-      "path": "/signature/public/forms/{formGuid}/participant/{participantGuid}/sign?name={participantName}&participantAuthSignature={authSignature}",
+      "path": "/signature/public/forms/{formGuid}/participant/{participantGuid}/sign?name={participantName}&participantAuthSignature={authSignature}&authData={authData}&signatureSignFormSettingsInfo={signatureSignFormSettingsInfo}",
       "operations": [
         {
           "nickname": "PublicSignForm",
@@ -325,6 +332,20 @@
               "dataType": "string",
               "required": true,
               "paramType": "query"
+            },
+            {
+              "name": "authData",
+              "description": "Base64 encoded Signer Image",
+              "dataType": "stream",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "signatureSignFormSettingsInfo",
+              "description": "Sign settings",
+              "dataType": "SignatureSignFormSettingsInfo",
+              "required": false,
+              "paramType": "body"
             }
           ]
         }
@@ -537,6 +558,101 @@
             {
               "name": "documentGuid",
               "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/forms/{formGuid}/participant/{participantGuid}?email={participantEmail}",
+      "operations": [
+        {
+          "nickname": "PublicModifyFormParticipant",
+          "summary": "Update Form Participant",
+          "responseClass": "SignatureFormParticipantResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "formGuid",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "participantGuid",
+              "description": "Participant GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "participantEmail",
+              "description": "Participant Email to be set",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/forms/{formGuid}/participant/{participantGuid}/validationCode/{validationCode}",
+      "operations": [
+        {
+          "nickname": "PublicValidateFormParticipant",
+          "summary": "Validate Particpiant Identity",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "formGuid",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "participantGuid",
+              "description": "Participant GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "validationCode",
+              "description": "Code to be validated",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/public/forms/{formGuid}/participant/{participantGuid}/validationCode/resent",
+      "operations": [
+        {
+          "nickname": "PublicFormParticipantResentValidationCode",
+          "summary": "Request validation code email",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "formGuid",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "participantGuid",
+              "description": "Participant GUID",
               "dataType": "string",
               "required": true,
               "paramType": "path"
@@ -777,6 +893,17 @@
       "id": "Result",
       "properties": {}
     },
+    "SignatureSignEnvelopeSettingsInfo": {
+      "id": "SignatureSignEnvelopeSettingsInfo",
+      "properties": {
+        "authData": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        }
+      }
+    },
     "SignatureEnvelopeDocumentsResponse": {
       "id": "SignatureEnvelopeDocumentsResponse",
       "properties": {
@@ -997,6 +1124,9 @@
         },
         "embedUrl": {
           "type": "string"
+        },
+        "comment": {
+          "type": "string"
         }
       }
     },
@@ -1133,6 +1263,24 @@
         },
         "ownerName": {
           "type": "string"
+        },
+        "enableTypedSignature": {
+          "type": "boolean"
+        },
+        "enableUploadedSignature": {
+          "type": "boolean"
+        },
+        "requireUserAuthForSign": {
+          "type": "boolean"
+        },
+        "requestUserAuthByPhoto": {
+          "type": "boolean"
+        },
+        "showRecipientCommentInSignedDocument": {
+          "type": "boolean"
+        },
+        "tags": {
+          "type": "string"
         }
       }
     },
@@ -1170,14 +1318,34 @@
         "id": {
           "type": "string"
         },
-        "documentGuid": {
-          "type": "string"
+        "signedDocuments": {
+          "type": "List",
+          "items": {
+            "$ref": "SignatureFormParticipantSignedDocumentInfo"
+          }
         },
         "fillDateTime": {
           "type": "string"
         },
         "status": {
           "type": "int"
+        },
+        "email": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureFormParticipantSignedDocumentInfo": {
+      "id": "SignatureFormParticipantSignedDocumentInfo",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "documentGuid": {
+          "type": "string"
         }
       }
     },
@@ -1327,6 +1495,17 @@
         }
       }
     },
+    "SignatureSignFormSettingsInfo": {
+      "id": "SignatureSignFormSettingsInfo",
+      "properties": {
+        "authData": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        }
+      }
+    },
     "SignatureFormResponse": {
       "id": "SignatureFormResponse",
       "properties": {
@@ -1414,6 +1593,30 @@
         },
         "canParticipantPrintForm": {
           "type": "boolean"
+        },
+        "requireUserAuthForSign": {
+          "type": "boolean"
+        },
+        "requestUserAuthByPhoto": {
+          "type": "boolean"
+        },
+        "enableTypedSignature": {
+          "type": "boolean"
+        },
+        "enableUploadedSignature": {
+          "type": "boolean"
+        },
+        "requireUserIdentityValidation": {
+          "type": "boolean"
+        },
+        "canBeCommented": {
+          "type": "boolean"
+        },
+        "showParticipantCommentInSignedDocument": {
+          "type": "boolean"
+        },
+        "tags": {
+          "type": "string"
         }
       }
     },
@@ -1571,9 +1774,9 @@
         },
         "fields": {
           "type": "List",
-          "items": {
-            "$ref": "SignatureDocumentFieldInfo"
-          }
+            "items": {
+                "$ref": "SignatureFieldInfo"
+            }
         }
       }
     },
@@ -1615,8 +1818,16 @@
         "recipients": {
           "type": "List",
           "items": {
-            "$ref": "SignatureEnvelopeRecipientInfo"
+            "$ref": "SignatureSignerInfo"
           }
+        }
+      }
+    },
+    "SignatureSignerInfo": {
+      "id": "SignatureSignerInfo",
+      "properties": {
+        "name": {
+          "type": "string"
         }
       }
     },

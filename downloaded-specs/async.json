@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.19.7.9582",
+  "apiVersion": "2.23.1.10192",
   "resourcePath": "/async",
   "apis": [
     {
@@ -523,6 +523,33 @@
           ]
         }
       ]
+    },
+    {
+      "path": "/async/{userId}/possibleConversions/{fileExt}",
+      "operations": [
+        {
+          "nickname": "GetPossibleConversions",
+          "summary": "Get Possible Conversions",
+          "responseClass": "GetPossibleConversions",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileExt",
+              "description": "File extension to check",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
     }
   ],
   "models": {
@@ -1039,6 +1066,17 @@
       "properties": {
         "job_id": {
           "type": "double"
+        }
+      }
+    },
+    "GetPossibleConversions": {
+      "id": "GetPossibleConversions",
+      "properties": {
+        "possibleConversions": {
+          "type": "List",
+          "items": {
+            "type": "string"
+          }
         }
       }
     }

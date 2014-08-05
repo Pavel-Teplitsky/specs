@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.19.7.9582",
+  "apiVersion": "2.23.1.10192",
   "resourcePath": "/storage",
   "apis": [
     {
@@ -189,7 +189,7 @@
       ]
     },
     {
-      "path": "/storage/{userId}/folders/{*path}?description={description}&callbackUrl={callbackUrl}",
+      "path": "/storage/{userId}/folders/{*path}?description={description}&callbackUrl={callbackUrl}&isKeepBothMode={isKeepBothMode}",
       "operations": [
         {
           "nickname": "Upload",
@@ -224,6 +224,13 @@
               "dataType": "string",
               "required": false,
               "paramType": "query"
+            },
+            {
+              "name": "isKeepBothMode",
+              "description": "Is keep both mode",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "path"
             },
             {
               "name": "stream",
@@ -1046,6 +1053,33 @@
         },
         "signature_form_signed_template": {
           "type": "string"
+        },
+        "signature_form_require_user_auth_for_sign": {
+          "type": "boolean"
+        },
+        "signature_form_request_user_auth_by_photo": {
+          "type": "boolean"
+        },
+        "signature_form_require_user_identity_validation": {
+          "type": "boolean"
+        },
+        "signature_envelope_require_user_auth_for_sign": {
+          "type": "boolean"
+        },
+        "signature_envelope_request_user_auth_by_photo": {
+          "type": "boolean"
+        },
+        "signature_enable_uploaded_signature": {
+          "type": "boolean"
+        },
+        "signature_enable_typed_signature": {
+          "type": "boolean"
+        },
+        "signature_enable_envelope_comment": {
+          "type": "boolean"
+        },
+        "signature_enable_form_comment": {
+          "type": "boolean"
         },
         "id": {
           "type": "long"

@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.19.7.9582",
+  "apiVersion": "2.23.1.10192",
   "resourcePath": "/merge",
   "apis": [
     {
@@ -1359,7 +1359,68 @@
       ]
     },
     {
-      "path": "/merge/{userId}/templates",
+      "path": "/merge/{userId}/questionnaires/collectors/{collectorId}/decorate",
+      "operations": [
+        {
+          "nickname": "DecorateQuestionnaireCollector",
+          "summary": "Decorate questionnaire collector",
+          "responseClass": "AddQuestionnaireCollectorStyleResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "collectorId",
+              "description": "Questionnaire collector global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "style",
+              "description": "Questionnaire collector style",
+              "dataType": "QuestionnaireCollectorStyle",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires/collector/{collectorId}/style",
+      "operations": [
+        {
+          "nickname": "GetQuestionnaireCollectorStyle",
+          "summary": "Returns questionnaire collector style",
+          "responseClass": "GetQuestionnaireCollectorStyleResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "collectorId",
+              "description": "Questionnaire collector global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/templates?orderBy={orderBy}&isAscending={isAscending}",
       "operations": [
         {
           "nickname": "GetTemplates",
@@ -1373,6 +1434,20 @@
               "dataType": "string",
               "required": true,
               "paramType": "path"
+            },
+            {
+              "name": "orderBy",
+              "description": "Order by column",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "isAscending",
+              "description": "Order by ascending or descending",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "query"
             }
           ]
         }
@@ -1504,15 +1579,15 @@
               "paramType": "query"
             },
             {
-              "name": "Groupdocs-Move",
-              "description": "File ID (move)",
+              "name": "Groupdocs-Copy",
+              "description": "File ID (copy)",
               "dataType": "string",
               "required": false,
               "paramType": "header"
             },
             {
-              "name": "Groupdocs-Copy",
-              "description": "File ID (copy)",
+              "name": "Groupdocs-Move",
+              "description": "File ID (move)",
               "dataType": "string",
               "required": false,
               "paramType": "header"
@@ -1574,7 +1649,7 @@
             {
               "name": "fields",
               "description": "Array of template fields",
-              "dataType": "List[TemplateField]",
+              "dataType": "List[TemplateEditorField]",
               "required": true,
               "paramType": "body"
             }
@@ -1638,6 +1713,23 @@
           "items": {
             "$ref": "DatasourceField"
           }
+        },
+        "regionName": {
+          "type": "string"
+        },
+        "dimension": {
+          "type": "Dimension"
+        }
+      }
+    },
+    "Dimension": {
+      "id": "Dimension",
+      "properties": {
+        "width": {
+          "type": "int"
+        },
+        "height": {
+          "type": "int"
         }
       }
     },
@@ -1662,6 +1754,7 @@
       "id": "CreateQuestionnaireTemplateResponse",
       "properties": {
         "result": {
+
            "type": "List",
           "items": {
             "$ref": "TemplateField"
@@ -1846,6 +1939,15 @@
         },
         "rect": {
           "type": "Rectangle"
+        },
+        "regionName": {
+          "type": "string"
+        },
+        "hint": {
+          "type": "string"
+        },
+        "dimension": {
+          "type": "FieldDimension"
         }
       }
     },
@@ -1900,6 +2002,17 @@
         },
         "height": {
           "type": "double"
+        }
+      }
+    },
+    "FieldDimension": {
+      "id": "FieldDimension",
+      "properties": {
+        "width": {
+          "type": "int"
+        },
+        "height": {
+          "type": "int"
         }
       }
     },
@@ -2760,6 +2873,105 @@
         }
       }
     },
+    "AddQuestionnaireCollectorStyleResponse": {
+      "id": "AddQuestionnaireCollectorStyleResponse",
+      "properties": {
+        "result": {
+          "type": "AddQuestionnaireCollectorStyleResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "AddQuestionnaireCollectorStyleResult": {
+      "id": "AddQuestionnaireCollectorStyleResult",
+      "properties": {
+        "collector_style_id": {
+          "type": "double"
+        },
+        "collector_id": {
+          "type": "double"
+        },
+        "collector_guid": {
+          "type": "string"
+        }
+      }
+    },
+    "QuestionnaireCollectorStyle": {
+      "id": "QuestionnaireCollectorStyle",
+      "properties": {
+        "collectorId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "QuestionnaireCollectorStyleFont"
+        },
+        "questionTitle": {
+          "type": "QuestionnaireCollectorStyleFont"
+        },
+        "baseFont": {
+          "type": "QuestionnaireCollectorStyleFont"
+        }
+      }
+    },
+    "QuestionnaireCollectorStyleFont": {
+      "id": "QuestionnaireCollectorStyleFont",
+      "properties": {
+        "fontFamily": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "int"
+        },
+        "color": {
+          "type": "string"
+        },
+        "isBold": {
+          "type": "boolean"
+        },
+        "isItalic": {
+          "type": "boolean"
+        }
+      }
+    },
+    "GetQuestionnaireCollectorStyleResponse": {
+      "id": "GetQuestionnaireCollectorStyleResponse",
+      "properties": {
+        "result": {
+          "type": "GetQuestionnaireCollectorStyleResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "GetQuestionnaireCollectorStyleResult": {
+      "id": "GetQuestionnaireCollectorStyleResult",
+      "properties": {
+        "collector_style_id": {
+          "type": "double"
+        },
+        "collectorId": {
+          "type": "double"
+        },
+        "style": {
+          "type": "QuestionnaireCollectorStyle"
+        }
+      }
+    },
     "GetTemplatesResponse": {
       "id": "GetTemplatesResponse",
       "properties": {
@@ -2874,6 +3086,21 @@
           "items": {
             "type": "string"
           }
+        },
+        "selectionPosition": {
+          "type": "int"
+        },
+        "selectionLength": {
+          "type": "int"
+        },
+        "isTableStartMarker": {
+          "type": "boolean"
+        },
+        "isTableEndMarker": {
+          "type": "boolean"
+        },
+        "regionName": {
+          "type": "string"
         }
       }
     },
@@ -2977,6 +3204,67 @@
         },
         "questionnaire": {
           "type": "QuestionnaireInfo"
+        }
+      }
+    },
+    "TemplateEditorField": {
+      "id": "TemplateEditorField",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "fieldtype": {
+          "type": "string"
+        },
+        "page": {
+          "type": "int"
+        },
+        "rect": {
+          "type": "Rectangle"
+        },
+        "selectionPosition": {
+          "type": "int"
+        },
+        "selectionLength": {
+          "type": "int"
+        },
+        "acceptableValues": {
+          "type": "List",
+          "items": {
+            "type": "string"
+          }
+        },
+        "style": {
+          "type": "TemplateEditorFieldStyle"
+        },
+        "isTableMarker": {
+          "type": "boolean"
+        }
+      }
+    },
+    "TemplateEditorFieldStyle": {
+      "id": "TemplateEditorFieldStyle",
+      "properties": {
+        "fontName": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "int"
+        },
+        "color": {
+          "type": "string"
+        },
+        "backgroundColor": {
+          "type": "string"
+        },
+        "borderWidth": {
+          "type": "int"
+        },
+        "borderColor": {
+          "type": "string"
+        },
+        "textAlignment": {
+          "type": "string"
         }
       }
     }

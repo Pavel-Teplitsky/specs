@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.19.7.9582",
+  "apiVersion": "2.23.1.10192",
   "resourcePath": "/system",
   "apis": [
     {
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "path": "/system/{callerId}/plans/{family}",
+      "path": "/system/{callerId}/plans/{family}?invalidate={invalidate}",
       "operations": [
         {
           "nickname": "GetSubscriptionPlans",

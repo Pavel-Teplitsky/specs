@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.19.7.9582",
+  "apiVersion": "2.23.1.10192",
   "resourcePath": "/ant",
   "apis": [
     {
@@ -97,8 +97,8 @@
       "operations": [
         {
           "nickname": "DeleteDocumentAnnotations",
-          "summary": "Delete annotation",
-          "responseClass": "DeleteDocumentAnnotationsReponse",
+          "summary": "Delete document annotations",
+          "responseClass": "DeleteDocumentAnnotationsResponse",
           "httpMethod": "DELETE",
           "parameters": [
             {
@@ -839,6 +839,9 @@
         "access": {
           "type": "string"
         },
+        "type": {
+          "type": "string"
+        },
         "serverTime": {
           "type": "long"
         }
@@ -852,6 +855,9 @@
         },
         "documentGuid": {
           "type": "string"
+        },
+        "layerId": {
+          "type": "long"
         },
         "sessionGuid": {
           "type": "string"
@@ -892,7 +898,12 @@
             5,
             6,
             7,
-            8
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
           ]
         },
         "access": {
@@ -917,6 +928,9 @@
           "type": "int"
         },
         "penStyle": {
+          "type": "int"
+        },
+        "backgroundColor": {
           "type": "int"
         },
         "fieldText": {
@@ -1063,8 +1077,8 @@
         }
       }
     },
-	 "DeleteDocumentAnnotationsReponse": {
-      "id": "DeleteDocumentAnnotationsReponse",
+    "DeleteDocumentAnnotationsResponse": {
+      "id": "DeleteDocumentAnnotationsResponse",
       "properties": {
         "result": {
           "type": "DeleteDocumentAnnotationsResult"
@@ -1083,13 +1097,13 @@
     "DeleteDocumentAnnotationsResult": {
       "id": "DeleteDocumentAnnotationsResult",
       "properties": {
-        "id": {
+		"id": {
           "type": "double"
         },
         "guid": {
           "type": "string"
+          }
         }
-      }
     },
     "AddReplyResponse": {
       "id": "AddReplyResponse",

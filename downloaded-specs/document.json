@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.19.7.9582",
+  "apiVersion": "2.23.1.10192",
   "resourcePath": "/doc",
   "apis": [
     {
@@ -581,6 +581,33 @@
               "dataType": "boolean",
               "required": false,
               "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/doc/{userId}/files/{fileId}/editor_fields",
+      "operations": [
+        {
+          "nickname": "GetTemplateEditorFields",
+          "summary": "Get template fields",
+          "responseClass": "TemplateEditorFieldsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
             }
           ]
         }
@@ -1519,6 +1546,33 @@
         "signature_form_signed_template": {
           "type": "string"
         },
+        "signature_form_require_user_auth_for_sign": {
+          "type": "boolean"
+        },
+        "signature_form_request_user_auth_by_photo": {
+          "type": "boolean"
+        },
+        "signature_form_require_user_identity_validation": {
+          "type": "boolean"
+        },
+        "signature_envelope_require_user_auth_for_sign": {
+          "type": "boolean"
+        },
+        "signature_envelope_request_user_auth_by_photo": {
+          "type": "boolean"
+        },
+        "signature_enable_uploaded_signature": {
+          "type": "boolean"
+        },
+        "signature_enable_typed_signature": {
+          "type": "boolean"
+        },
+        "signature_enable_envelope_comment": {
+          "type": "boolean"
+        },
+        "signature_enable_form_comment": {
+          "type": "boolean"
+        },
         "id": {
           "type": "long"
         },
@@ -1887,6 +1941,21 @@
           "items": {
             "type": "string"
           }
+        },
+        "selectionPosition": {
+          "type": "int"
+        },
+        "selectionLength": {
+          "type": "int"
+        },
+        "isTableStartMarker": {
+          "type": "boolean"
+        },
+        "isTableEndMarker": {
+          "type": "boolean"
+        },
+        "regionName": {
+          "type": "string"
         }
       }
     },
@@ -1904,6 +1973,95 @@
         },
         "height": {
           "type": "double"
+        }
+      }
+    },
+    "TemplateEditorFieldsResponse": {
+      "id": "TemplateEditorFieldsResponse",
+      "properties": {
+        "result": {
+          "type": "TemplateEditorFieldsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "TemplateEditorFieldsResult": {
+      "id": "TemplateEditorFieldsResult",
+      "properties": {
+        "fields": {
+          "type": "List",
+          "items": {
+            "$ref": "TemplateEditorField"
+          }
+        }
+      }
+    },
+    "TemplateEditorField": {
+      "id": "TemplateEditorField",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "fieldtype": {
+          "type": "string"
+        },
+        "page": {
+          "type": "int"
+        },
+        "rect": {
+          "type": "Rectangle"
+        },
+        "selectionPosition": {
+          "type": "int"
+        },
+        "selectionLength": {
+          "type": "int"
+        },
+        "acceptableValues": {
+          "type": "List",
+          "items": {
+            "type": "string"
+          }
+        },
+        "style": {
+          "type": "TemplateEditorFieldStyle"
+        },
+        "isTableMarker": {
+          "type": "boolean"
+        }
+      }
+    },
+    "TemplateEditorFieldStyle": {
+      "id": "TemplateEditorFieldStyle",
+      "properties": {
+        "fontName": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "int"
+        },
+        "color": {
+          "type": "string"
+        },
+        "backgroundColor": {
+          "type": "string"
+        },
+        "borderWidth": {
+          "type": "int"
+        },
+        "borderColor": {
+          "type": "string"
+        },
+        "textAlignment": {
+          "type": "string"
         }
       }
     },
