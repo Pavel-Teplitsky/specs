@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.23.1.10192",
+  "apiVersion": "2.25.82.11147",
   "resourcePath": "/ant",
   "apis": [
     {
@@ -783,7 +783,7 @@
         }
       }
     },
-	"AnnotationReviewerRights": {
+"AnnotationReviewerRights": {
       "id": "AnnotationReviewerRights",
       "properties": {
         "CanView": {
@@ -805,16 +805,6 @@
    "type": "int",
     "value": 8
           
-  },
-  "CanDelete": {
-   "type": "int",
-    "value": 16
-          
-  },
-  "All": {
-   "type": "int",
-   "value": 31
-   
   }
       }
     },
@@ -1097,13 +1087,13 @@
     "DeleteDocumentAnnotationsResult": {
       "id": "DeleteDocumentAnnotationsResult",
       "properties": {
-		"id": {
-          "type": "double"
-        },
-        "guid": {
-          "type": "string"
+        "delete_annotation_results": {
+          "type": "List",
+          "items": {
+            "$ref": "DeleteAnnotationResult"
           }
         }
+      }
     },
     "AddReplyResponse": {
       "id": "AddReplyResponse",

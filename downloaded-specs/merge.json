@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.23.1.10192",
+  "apiVersion": "2.25.82.11147",
   "resourcePath": "/merge",
   "apis": [
     {
@@ -1656,6 +1656,108 @@
           ]
         }
       ]
+    },
+    {
+      "path": "/merge/{userId}/files/{fileId}/templates/add",
+      "operations": [
+        {
+          "nickname": "AddQuestionnaireTemplateFields",
+          "summary": "Add template editor fields to the specific document",
+          "responseClass": "GetQuestionnaireTemplateResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fields",
+              "description": "Array of template fields which should be added",
+              "dataType": "List[TemplateEditorField]",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/files/{fileId}/templates/update",
+      "operations": [
+        {
+          "nickname": "UpdateQuestionnaireTemplateFields",
+          "summary": "Update template's fields",
+          "responseClass": "GetQuestionnaireTemplateResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fields",
+              "description": "Array of template fields which should be updated",
+              "dataType": "List[TemplateEditorField]",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/files/{fileId}/templates/delete",
+      "operations": [
+        {
+          "nickname": "DeleteQuestionnaireTemplateFields",
+          "summary": "Delete template's fields",
+          "responseClass": "GetQuestionnaireTemplateResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fields",
+              "description": "Array of template fields which should be deleted",
+              "dataType": "List[TemplateEditorField]",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
     }
   ],
   "models": {
@@ -1750,7 +1852,7 @@
         }
       }
     },
-	"CreateQuestionnaireTemplateResponse": {
+    "CreateQuestionnaireTemplateResponse": {
       "id": "CreateQuestionnaireTemplateResponse",
       "properties": {
         "result": {
@@ -3267,6 +3369,37 @@
           "type": "string"
         }
       }
-    }
+    },
+    "GetQuestionnaireTemplateResponse": {
+      "id": "GetQuestionnaireTemplateResponse",
+      "properties": {
+        "result": {
+          "type": "GetQuestionnaireTemplateResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "GetQuestionnaireTemplateResult": {
+      "id": "GetQuestionnaireTemplateResult",
+      "properties": {
+        "documentId": {
+          "type": "string"
+        },
+        "templateEditorFields": {
+          "type": "List",
+          "items": {
+            "$ref": "TemplateEditorField"
+          }
+        }
+      }
+    } 
   }
 }

@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.23.1.10192",
+  "apiVersion": "2.25.82.11147",
   "resourcePath": "/async",
   "apis": [
     {
@@ -614,6 +614,9 @@
         },
         "callback_url": {
           "type": "string"
+        },
+        "type": {
+          "type": "string"
         }
       }
     },
@@ -907,6 +910,9 @@
           "type": "string"
         },
         "callback_url": {
+          "type": "string"
+        },
+        "type": {
           "type": "string"
         }
       }

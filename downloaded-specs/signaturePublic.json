@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.23.1.10192",
+  "apiVersion": "2.25.82.11147",
   "resourcePath": "/signature/public",
   "apis": [
     {
@@ -816,6 +816,9 @@
         },
         "settings": {
           "type": "string"
+        },
+        "lockDuringSign": {
+          "type": "boolean"
         }
       }
     },
@@ -1335,6 +1338,9 @@
         },
         "comment": {
           "type": "string"
+        },
+        "name": {
+          "type": "string"
         }
       }
     },
@@ -1503,6 +1509,9 @@
         },
         "comment": {
           "type": "string"
+        },
+        "email": {
+          "type": "string"
         }
       }
     },
@@ -1617,6 +1626,9 @@
         },
         "tags": {
           "type": "string"
+        },
+        "parseFields": {
+          "type": "boolean"
         }
       }
     },
@@ -1749,6 +1761,10 @@
           "required": true,
           "type": "string"
         },
+        "email": {
+          "required": true,
+          "type": "string"
+        },
         "top": {
           "required": true,
           "type": "double"
@@ -1773,7 +1789,7 @@
           "type": "string"
         },
         "fields": {
-          "type": "List",
+         "type": "List",
             "items": {
                 "$ref": "SignatureFieldInfo"
             }

@@ -1,9 +1,71 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.23.1.10192",
+  "apiVersion": "2.25.82.11147",
   "resourcePath": "/signature",
   "apis": [
+    {
+      "path": "/signature/{userId}/templates?records={records}&page={page}&documentGuid={documentGuid}&recipientName={recipientName}&name={name}&tag={tag}",
+      "operations": [
+        {
+          "nickname": "GetSignatureTemplates",
+          "summary": "Get templates",
+          "responseClass": "SignatureTemplatesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "page",
+              "description": "Page number",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "records",
+              "description": "Records count",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "documentGuid",
+              "description": "Fitler templates by document originalMD5",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "recipientName",
+              "description": "Filter templates by recipient nickname",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "name",
+              "description": "Filter templates by signatureTemplate name",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "tag",
+              "description": "Filter templates by tag",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
     {
       "path": "/signature/{userId}/templates/{templateGuid}",
       "operations": [
@@ -3724,6 +3786,33 @@
       ]
     },
     {
+      "path": "/signature/{userId}/forms/{formGuid}/participants",
+      "operations": [
+        {
+          "nickname": "GetSignatureFormParticipants",
+          "summary": "Get form participants",
+          "responseClass": "SignatureFormParticipantsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "formGuid",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "path": "/signature/{userId}/lists",
       "operations": [
         {
@@ -3952,83 +4041,14 @@
           ]
         }
       ]
-    },
-    {
-      "path": "/signature/{userId}/templates?records={records}&page={page}&documentGuid={documentGuid}&recipientName={recipientName}&name={name}&tag={tag}",
-      "operations": [
-        {
-          "nickname": "GetSignatureTemplates",
-          "summary": "Get templates",
-          "responseClass": "SignatureTemplatesResponse",
-          "httpMethod": "GET",
-          "parameters": [
-            {
-              "name": "userId",
-              "description": "User GUID",
-              "dataType": "string",
-              "required": true,
-              "paramType": "path"
-            },
-            {
-              "name": "page",
-              "description": "Page number",
-              "dataType": "int",
-              "required": false,
-              "paramType": "query"
-            },
-            {
-              "name": "records",
-              "description": "Records count",
-              "dataType": "int",
-              "required": false,
-              "paramType": "query"
-            },
-            {
-              "name": "documentGuid",
-              "description": "Fitler templates by document originalMD5",
-              "dataType": "string",
-              "required": false,
-              "paramType": "query"
-            },
-            {
-              "name": "recipientName",
-              "description": "Filter templates by recipient nickname",
-              "dataType": "string",
-              "required": false,
-              "paramType": "query"
-            },
-            {
-              "name": "name",
-              "description": "Filter templates by signatureTemplate name",
-              "dataType": "string",
-              "required": false,
-              "paramType": "query"
-            },
-            {
-              "name": "tag",
-              "description": "Filter templates by tag",
-              "dataType": "string",
-              "required": false,
-              "paramType": "query"
-
-
-
-
-
-
-
-            }
-          ]
-        }
-      ]
     }
   ],
   "models": {
-    "SignatureTemplateResponse": {
-      "id": "SignatureTemplateResponse",
+    "SignatureTemplatesResponse": {
+      "id": "SignatureTemplatesResponse",
       "properties": {
         "result": {
-          "type": "SignatureTemplateResult"
+          "type": "SignatureTemplatesResult"
         },
         "status": {
           "type": "string"
@@ -4041,11 +4061,17 @@
         }
       }
     },
-    "SignatureTemplateResult": {
-      "id": "SignatureTemplateResult",
+    "SignatureTemplatesResult": {
+      "id": "SignatureTemplatesResult",
       "properties": {
-        "template": {
-          "type": "SignatureTemplateInfo"
+        "templatesCount": {
+          "type": "int"
+        },
+        "templates": {
+          "type": "List",
+          "items": {
+            "$ref": "SignatureTemplateInfo"
+          }
         }
       }
     },
@@ -4128,6 +4154,31 @@
         },
         "roleId": {
           "type": "double"
+        }
+      }
+    },
+    "SignatureTemplateResponse": {
+      "id": "SignatureTemplateResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureTemplateResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SignatureTemplateResult": {
+      "id": "SignatureTemplateResult",
+      "properties": {
+        "template": {
+          "type": "SignatureTemplateInfo"
         }
       }
     },
@@ -4909,6 +4960,10 @@
           "required": true,
           "type": "string"
         },
+        "email": {
+          "required": true,
+          "type": "string"
+        },
         "top": {
           "required": true,
           "type": "double"
@@ -5543,6 +5598,9 @@
         },
         "settings": {
           "type": "string"
+        },
+        "lockDuringSign": {
+          "type": "boolean"
         }
       }
     },
@@ -5681,6 +5739,9 @@
         },
         "pageHeight": {
           "type": "int"
+        },
+        "lockDuringSign": {
+          "type": "boolean"
         }
       }
     },
@@ -6217,6 +6278,9 @@
         },
         "tags": {
           "type": "string"
+        },
+        "parseFields": {
+          "type": "boolean"
         }
       }
     },
@@ -6821,6 +6885,77 @@
         }
       }
     },
+    "SignatureFormParticipantsResponse": {
+      "id": "SignatureFormParticipantsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureFormParticipantsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "composedOn": {
+          "type": "long"
+        }
+      }
+    },
+    "SignatureFormParticipantsResult": {
+      "id": "SignatureFormParticipantsResult",
+      "properties": {
+        "formId": {
+          "type": "string"
+        },
+        "participants": {
+          "type": "List",
+          "items": {
+            "$ref": "SignatureFormParticipantInfo"
+          }
+        }
+      }
+    },
+    "SignatureFormParticipantInfo": {
+      "id": "SignatureFormParticipantInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "signedDocuments": {
+          "type": "List",
+          "items": {
+            "$ref": "SignatureFormParticipantSignedDocumentInfo"
+          }
+        },
+        "fillDateTime": {
+          "type": "string"
+        },
+        "status": {
+          "type": "int"
+        },
+        "email": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureFormParticipantSignedDocumentInfo": {
+      "id": "SignatureFormParticipantSignedDocumentInfo",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "documentGuid": {
+          "type": "string"
+        }
+      }
+    },
     "SignaturePredefinedListsResponse": {
       "id": "SignaturePredefinedListsResponse",
       "properties": {
@@ -7095,37 +7230,6 @@
           "type": "List",
           "items": {
             "$ref": "SignatureSignatureInfo"
-          }
-        }
-      }
-    },
-    "SignatureTemplatesResponse": {
-      "id": "SignatureTemplatesResponse",
-      "properties": {
-        "result": {
-          "type": "SignatureTemplatesResult"
-        },
-        "status": {
-          "type": "string"
-        },
-        "error_message": {
-          "type": "string"
-        },
-        "composedOn": {
-          "type": "long"
-        }
-      }
-    },
-    "SignatureTemplatesResult": {
-      "id": "SignatureTemplatesResult",
-      "properties": {
-        "templatesCount": {
-          "type": "int"
-        },
-        "templates": {
-          "type": "List",
-          "items": {
-            "$ref": "SignatureTemplateInfo"
           }
         }
       }

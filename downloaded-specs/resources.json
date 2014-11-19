@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0/spec",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.23.1.10192",
+  "apiVersion": "2.25.82.11147",
   "apis": [
     {
       "path": "/comparison.{format}"
@@ -14,7 +14,7 @@
     },
     {
       "path": "/user.{format}"
-    },
+    },    
     {
       "path": "/async.{format}"
     },

@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.23.1.10192",
+  "apiVersion": "2.25.82.11147",
   "resourcePath": "/system",
   "apis": [
     {
@@ -30,6 +30,40 @@
             {
               "name": "planId",
               "description": "Subscription Plan Id",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/system/{userId}/paymentPlans/{paymentPlanId}/discounts/{discountCode}",
+      "operations": [
+        {
+          "nickname": "SimulateAssessForPaymentPlan",
+          "summary": "Simulate Assess For Payment Plan",
+          "responseClass": "GetInvoicesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "discountCode",
+              "description": "Discount Code",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "paymentPlanId",
+              "description": "Payment PlanId on the payment service",
               "dataType": "string",
               "required": false,
               "paramType": "path"
@@ -79,7 +113,7 @@
       ]
     },
     {
-      "path": "/system/{callerId}/plans/{family}?invalidate={invalidate}",
+      "path": "/system/{callerId}/plans/{family}",
       "operations": [
         {
           "nickname": "GetSubscriptionPlans",

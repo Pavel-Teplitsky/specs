@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.23.1.10192",
+  "apiVersion": "2.25.82.11147",
   "resourcePath": "/shared",
   "apis": [
     {
@@ -284,6 +284,24 @@
         "is_watermark_annotation_button_enabled": {
           "type": "boolean"
         },
+        "is_text_replacement_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_arrow_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_text_redaction_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_resource_redaction_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_text_underline_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_distance_annotation_button_enabled": {
+          "type": "boolean"
+        },
         "is_annotation_document_name_shown": {
           "type": "boolean"
         },
@@ -426,6 +444,27 @@
           "type": "boolean"
         },
         "signature_enable_form_comment": {
+          "type": "boolean"
+        },
+        "can_participan_download_form": {
+          "type": "boolean"
+        },
+        "can_participant_print_form": {
+          "type": "boolean"
+        },
+        "notify_form_owner_on_sign": {
+          "type": "boolean"
+        },
+        "attach_signed_form_document": {
+          "type": "boolean"
+        },
+        "show_participant_comment_in_signed_document": {
+          "type": "boolean"
+        },
+        "forms_notify_other_on_sign": {
+          "type": "string"
+        },
+        "form_document_parse_fields": {
           "type": "boolean"
         },
         "id": {

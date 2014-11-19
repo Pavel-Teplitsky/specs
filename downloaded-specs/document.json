@@ -1,7 +1,7 @@
 {
   "basePath": "https://api.groupdocs.com/v2.0",
   "swaggerVersion": "1.1",
-  "apiVersion": "2.23.1.10192",
+  "apiVersion": "2.25.82.11147",
   "resourcePath": "/doc",
   "apis": [
     {
@@ -58,54 +58,6 @@
             {
               "name": "usePdf",
               "description": "Use Pdf",
-              "dataType": "string",
-              "required": false,
-              "paramType": "query"
-            },
-            {
-              "name": "passwordSalt",
-              "description": "A password hash for password protected documents",
-              "dataType": "string",
-              "required": false,
-              "paramType": "query"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "path": "/doc/{userId}/files/{fileId}/htmlRepresentations?page_number={pageNumber}&page_count={pageCount}&passwordSalt={passwordSalt}",
-      "operations": [
-        {
-          "nickname": "ViewDocumentAsHtml",
-          "summary": "View Document as Html",
-          "responseClass": "ViewDocumentResponse",
-          "httpMethod": "POST",
-          "parameters": [
-            {
-              "name": "userId",
-              "description": "User GUID",
-              "dataType": "string",
-              "required": true,
-              "paramType": "path"
-            },
-            {
-              "name": "fileId",
-              "description": "File GUID",
-              "dataType": "string",
-              "required": true,
-              "paramType": "path"
-            },
-            {
-              "name": "pageNumber",
-              "description": "Page Number",
-              "dataType": "string",
-              "required": false,
-              "paramType": "query"
-            },
-            {
-              "name": "pageCount",
-              "description": "Page Count",
               "dataType": "string",
               "required": false,
               "paramType": "query"
@@ -591,7 +543,7 @@
       "operations": [
         {
           "nickname": "GetTemplateEditorFields",
-          "summary": "Get template fields",
+          "summary": "Get template editor fields",
           "responseClass": "TemplateEditorFieldsResponse",
           "httpMethod": "GET",
           "parameters": [
@@ -703,88 +655,6 @@
       ]
     },
     {
-      "path": "/doc/{userId}/files/{fileId}/pages/{pageNumber}/htmlFixed?expires={expiresOn}",
-      "operations": [
-        {
-          "nickname": "GetDocumentPageHtmlFixed",
-          "summary": "Returns an HTML Fixed representantion of a particular document page.",
-          "responseClass": "stream",
-          "httpMethod": "GET",
-          "parameters": [
-            {
-              "name": "userId",
-              "description": "GroupDocs user global unique identifier.",
-              "dataType": "string",
-              "required": true,
-              "paramType": "path"
-            },
-            {
-              "name": "fileId",
-              "description": "Document global unique identifier.",
-              "dataType": "string",
-              "required": true,
-              "paramType": "path"
-            },
-            {
-              "name": "pageNumber",
-              "description": "Document page number to get image for.",
-              "dataType": "int",
-              "required": true,
-              "paramType": "path"
-            },
-            {
-              "name": "expiresOn",
-              "description": "The date and time in milliseconds since epoch the URL expires.",
-              "dataType": "boolean",
-              "required": false,
-              "paramType": "query"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "path": "/doc/{userId}/files/{fileId}/pages/{pageNumber}/htmlRepresentations?expires={expiresOn}",
-      "operations": [
-        {
-          "nickname": "GetDocumentPageHtml",
-          "summary": "Returns an HTML representantion of a particular document page.",
-          "responseClass": "stream",
-          "httpMethod": "GET",
-          "parameters": [
-            {
-              "name": "userId",
-              "description": "GroupDocs user global unique identifier.",
-              "dataType": "string",
-              "required": true,
-              "paramType": "path"
-            },
-            {
-              "name": "fileId",
-              "description": "Document global unique identifier.",
-              "dataType": "string",
-              "required": true,
-              "paramType": "path"
-            },
-            {
-              "name": "pageNumber",
-              "description": "Document page number to get image for.",
-              "dataType": "int",
-              "required": true,
-              "paramType": "path"
-            },
-            {
-              "name": "expiresOn",
-              "description": "The date and time in milliseconds since epoch the URL expires.",
-              "dataType": "boolean",
-              "required": false,
-              "paramType": "query"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "path": "/doc/{userId}/files/{fileId}/pages/images/{dimension}/urls?first_page={firstPage}&page_count={pageCount}&quality={quality}&use_pdf={usePdf}&token={token}",
       "operations": [
         {
@@ -846,47 +716,6 @@
               "name": "token",
               "description": "A document viewer session token returned by the View Document request.",
               "dataType": "string",
-              "required": false,
-              "paramType": "query"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "path": "/doc/{userId}/files/{fileId}/pages/htmlRepresentationUrls?first_page={firstPage}&page_count={pageCount}",
-      "operations": [
-        {
-          "nickname": "GetDocumentPagesHtmlUrls",
-          "summary": "Returns a list of URLs pointing to document page HTML representations.",
-          "responseClass": "GetImageUrlsResponse",
-          "httpMethod": "GET",
-          "parameters": [
-            {
-              "name": "userId",
-              "description": "GroupDocs user global unique identifier.",
-              "dataType": "string",
-              "required": true,
-              "paramType": "path"
-            },
-            {
-              "name": "fileId",
-              "description": "Document global unique identifier.",
-              "dataType": "string",
-              "required": true,
-              "paramType": "path"
-            },
-            {
-              "name": "firstPage",
-              "description": "Document page number to start from.",
-              "dataType": "int",
-              "required": false,
-              "paramType": "query"
-            },
-            {
-              "name": "pageCount",
-              "description": "Page count to return URLs for.",
-              "dataType": "int",
               "required": false,
               "paramType": "query"
             }
@@ -1429,6 +1258,24 @@
         "is_watermark_annotation_button_enabled": {
           "type": "boolean"
         },
+        "is_text_replacement_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_arrow_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_text_redaction_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_resource_redaction_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_text_underline_annotation_button_enabled": {
+          "type": "boolean"
+        },
+        "is_distance_annotation_button_enabled": {
+          "type": "boolean"
+        },
         "is_annotation_document_name_shown": {
           "type": "boolean"
         },
@@ -1571,6 +1418,27 @@
           "type": "boolean"
         },
         "signature_enable_form_comment": {
+          "type": "boolean"
+        },
+        "can_participan_download_form": {
+          "type": "boolean"
+        },
+        "can_participant_print_form": {
+          "type": "boolean"
+        },
+        "notify_form_owner_on_sign": {
+          "type": "boolean"
+        },
+        "attach_signed_form_document": {
+          "type": "boolean"
+        },
+        "show_participant_comment_in_signed_document": {
+          "type": "boolean"
+        },
+        "forms_notify_other_on_sign": {
+          "type": "string"
+        },
+        "form_document_parse_fields": {
           "type": "boolean"
         },
         "id": {
@@ -1884,7 +1752,7 @@
         }
       }
     },
-    "TemplateFieldsResponse": {
+  "TemplateFieldsResponse": {
       "id": "TemplateFieldsResponse",
       "properties": {
         "result": {
@@ -1959,24 +1827,7 @@
         }
       }
     },
-    "Rectangle": {
-      "id": "Rectangle",
-      "properties": {
-        "x": {
-          "type": "double"
-        },
-        "y": {
-          "type": "double"
-        },
-        "width": {
-          "type": "double"
-        },
-        "height": {
-          "type": "double"
-        }
-      }
-    },
-    "TemplateEditorFieldsResponse": {
+"TemplateEditorFieldsResponse": {
       "id": "TemplateEditorFieldsResponse",
       "properties": {
         "result": {
@@ -2328,6 +2179,23 @@
         },
         "rect": {
           "type": "Rectangle"
+        }
+      }
+    },
+    "Rectangle": {
+      "id": "Rectangle",
+      "properties": {
+        "x": {
+          "type": "double"
+        },
+        "y": {
+          "type": "double"
+        },
+        "width": {
+          "type": "double"
+        },
+        "height": {
+          "type": "double"
         }
       }
     }
